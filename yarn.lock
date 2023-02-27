@@ -853,6 +853,7 @@ __metadata:
     "@nuxtjs/eslint-config-typescript": ^12.0.0
     "@types/node": ^18.14.2
     "@unocss/nuxt": ^0.50.1
+    "@unocss/reset": ^0.50.1
     eslint: ^8.35.0
     eslint-config-prettier: ^8.6.0
     husky: ^8.0.3
@@ -1684,7 +1685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unocss/reset@npm:0.50.1":
+"@unocss/reset@npm:0.50.1, @unocss/reset@npm:^0.50.1":
   version: 0.50.1
   resolution: "@unocss/reset@npm:0.50.1"
   checksum: 43ee0409a6b5475d1d1d3eca0cfd5387618ee3be5846e2b346912a1103633154b14e7b65c10040bb7d9a9ab9a53092d77a2abea73c5e3307b5b1b026d669680d
