@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-mongo
+{
+  "name": "Mirror-Frontend",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "Vue.volar",
+        "wix.vscode-import-cost",
+        "GitHub.copilot"
+      ]
+    }
+  },
+  "postCreateCommand": [
+    "bash",
+    "-i",
+    "-c",
+    "nvm install && nvm use && corepack enable && yarn config set --home enableTelemetry 0 && yarn"
+  ]
+}
