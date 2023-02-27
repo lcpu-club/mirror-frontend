@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div id="app">
     <AppHeader class="fixed top-0 left-0 right-0 h-16 shadow" />
     <main class="pt-16 m-8">
       <slot></slot>
@@ -9,3 +9,15 @@
 </template>
 
 <script setup lang="ts"></script>
+
+<style>
+#app {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+</style>
