@@ -1,0 +1,4 @@
+.nuxt
+.yarn
+node_modules
+public
