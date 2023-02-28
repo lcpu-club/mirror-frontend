@@ -1,0 +1,7 @@
+html {
+  @apply h-full;
+}
+
+body {
+  @apply min-h-full grid place-items-stretch;
+}
