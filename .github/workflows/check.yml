@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: corepack yarn
       - name: Run checks
-        run: yarn check:all
+        run: corepack yarn check:all
