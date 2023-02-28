@@ -17,6 +17,7 @@
     "git:precommit": "run check:all"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.47",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18.14.2",
     "@unocss/nuxt": "^0.50.1",

@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     shim: false
   },
   modules: ['@unocss/nuxt'],
-  unocss: {},
+  unocss: {
+    wind: true,
+    icons: true
+  },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css']
 })

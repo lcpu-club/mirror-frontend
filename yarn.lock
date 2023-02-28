@@ -756,7 +756,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/types@npm:^2.0.0":
+"@iconify-json/mdi@npm:^1.1.47":
+  version: 1.1.47
+  resolution: "@iconify-json/mdi@npm:1.1.47"
+  dependencies:
+    "@iconify/types": "*"
+  checksum: 504f311e888beb465728e49d4a68128a85fc40ef122c58985311f9f627287bd7288a08b5465bcd770cb17862509b106da63db5d31e97b40aff00a8037c9ed8ce
+  languageName: node
+  linkType: hard
+
+"@iconify/types@npm:*, @iconify/types@npm:^2.0.0":
   version: 2.0.0
   resolution: "@iconify/types@npm:2.0.0"
   checksum: 029f58542c160e9d4a746869cf2e475b603424d3adf3994c5cc8d0406c47e6e04a3b898b2707840c1c5b9bd5563a1660a34b110d89fce43923baca5222f4e597
@@ -850,6 +859,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lcpu/mirror-frontend@workspace:."
   dependencies:
+    "@iconify-json/mdi": ^1.1.47
     "@nuxtjs/eslint-config-typescript": ^12.0.0
     "@types/node": ^18.14.2
     "@unocss/nuxt": ^0.50.1
