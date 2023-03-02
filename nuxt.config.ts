@@ -33,5 +33,11 @@ export default defineNuxtConfig({
       hash,
       version
     }
+  },
+  routeRules: {
+    '/**': { prerender: false },
+    '/': { prerender: true },
+    '/help/**': { prerender: true },
+    '/status/**': { prerender: true }
   }
 })
