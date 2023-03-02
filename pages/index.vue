@@ -4,19 +4,16 @@
       <div class="flex justify-between items-center p-4 border-b">
         <div class="text-2xl">Mirror List</div>
         <div>
-          <input
-            v-model.lazy="search"
-            type="text"
-            class="border border-rd px-2"
-            placeholder="Search"
-          />
+          <input v-model="search" type="text" class="border border-rd px-2" placeholder="Search" />
         </div>
       </div>
-      <div v-if="respRef.pending.value" class="flex flex-col items-center gap-4 p-8">
-        <div class="i-mdi-loading w-16 h-16 animate-spin"></div>
-        <div>Loading Mirror List...</div>
-      </div>
-      <template v-else>
+      <AsyncData :data="respRef">
+        <template #loading>
+          <div v-if="respRef.pending.value" class="flex flex-col items-center gap-4 p-8">
+            <div class="i-mdi-loading w-16 h-16 animate-spin"></div>
+            <div>Loading Mirror List...</div>
+          </div>
+        </template>
         <table class="mirrorlist-table">
           <thead>
             <tr>
@@ -34,7 +31,7 @@
             >
               <td class="flex gap-1 items-center">
                 <NuxtLink :to="mirror.url">{{ mirror.name }}</NuxtLink>
-                <NuxtLink :to="'/help/' + mirror.id">
+                <NuxtLink v-if="mirror.id in helps" :to="helps[mirror.id]">
                   <div class="i-mdi-help-circle text-blue"></div>
                 </NuxtLink>
               </td>
@@ -52,7 +49,7 @@
             Refresh
           </button>
         </div>
-      </template>
+      </AsyncData>
     </div>
   </div>
 </template>
@@ -64,6 +61,11 @@ useHead({
 
 const respRef = useFetch('/api/mirrorlist')
 const search = ref('')
+
+const helpList = useAsyncData(() => queryContent('help').only(['_path', 'mirrorId']).find())
+const helps = computed(() =>
+  Object.fromEntries(helpList.data.value?.map((help) => [help.mirrorId, help._path]) ?? [])
+)
 </script>
 
 <style>
