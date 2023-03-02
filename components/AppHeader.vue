@@ -1,11 +1,10 @@
 <template>
   <header class="flex items-center px-8 gap-2 backdrop-filter backdrop-blur">
-    <div>
+    <NuxtLink to="/" class="self-stretch flex items-center flex gap-2">
       <img :src="pku" class="h-12" />
-    </div>
-    <div>
-      <img :src="mirror" class="h-8 mt-2" />
-    </div>
+      <img :src="mirror" class="h-8 mt-2 lt-md:hidden" />
+    </NuxtLink>
+
     <div class="flex-1"></div>
     <NuxtLink
       v-for="(link, i) of links"
