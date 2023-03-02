@@ -1,4 +1,8 @@
+import { execSync } from 'child_process'
 import { defineNuxtConfig } from 'nuxt/config'
+import { version } from './package.json'
+
+const hash = execSync('git rev-parse --short HEAD').toString().trim()
 
 export default defineNuxtConfig({
   typescript: {
@@ -19,6 +23,12 @@ export default defineNuxtConfig({
         depth: 0,
         exclude: [1, 2, 3, 4, 5, 6]
       }
+    }
+  },
+  runtimeConfig: {
+    public: {
+      hash,
+      version
     }
   }
 })
