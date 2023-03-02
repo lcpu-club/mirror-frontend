@@ -1,4 +1,4 @@
-import { BarChart, LineChart } from 'echarts/charts'
+import { LineChart } from 'echarts/charts'
 import {
   DatasetComponent,
   GridComponent,
@@ -15,7 +15,6 @@ export default defineNuxtPlugin((nuxt) => {
   use([
     CanvasRenderer,
     LineChart,
-    BarChart,
     DatasetComponent,
     GridComponent,
     TitleComponent,
