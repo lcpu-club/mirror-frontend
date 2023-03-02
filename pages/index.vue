@@ -4,19 +4,16 @@
       <div class="flex justify-between items-center p-4 border-b">
         <div class="text-2xl">Mirror List</div>
         <div>
-          <input
-            v-model.lazy="search"
-            type="text"
-            class="border border-rd px-2"
-            placeholder="Search"
-          />
+          <input v-model="search" type="text" class="border border-rd px-2" placeholder="Search" />
         </div>
       </div>
-      <div v-if="respRef.pending.value" class="flex flex-col items-center gap-4 p-8">
-        <div class="i-mdi-loading w-16 h-16 animate-spin"></div>
-        <div>Loading Mirror List...</div>
-      </div>
-      <template v-else>
+      <AsyncData :data="respRef">
+        <template #loading>
+          <div v-if="respRef.pending.value" class="flex flex-col items-center gap-4 p-8">
+            <div class="i-mdi-loading w-16 h-16 animate-spin"></div>
+            <div>Loading Mirror List...</div>
+          </div>
+        </template>
         <table class="mirrorlist-table">
           <thead>
             <tr>
@@ -52,7 +49,7 @@
             Refresh
           </button>
         </div>
-      </template>
+      </AsyncData>
     </div>
   </div>
 </template>
