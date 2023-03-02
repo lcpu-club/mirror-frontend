@@ -1,6 +1,6 @@
 import type { EChartsOption } from 'echarts'
 
-interface StatusTableWithTime {
+export interface StatusResultWithTime {
   result: {
     labels: ['time', ...any]
     data: [number, ...any][]
@@ -11,7 +11,7 @@ export interface OptionConvertStatusToChart {
   yAxisLabelFormatter?: (value: any) => string
 }
 
-function rawConvertStatusToChart<S extends StatusTableWithTime>(
+function rawConvertStatusToChart<S extends StatusResultWithTime>(
   status: S | undefined,
   option?: OptionConvertStatusToChart
 ): EChartsOption | undefined {
@@ -61,5 +61,5 @@ function rawConvertStatusToChart<S extends StatusTableWithTime>(
 
 export const convertStatusToChart =
   (option?: OptionConvertStatusToChart) =>
-  <S extends StatusTableWithTime>(rawData: Ref<S | undefined | null>) =>
+  <S extends StatusResultWithTime>(rawData: Ref<S | undefined | null>) =>
     computed(() => (rawData.value ? rawConvertStatusToChart(rawData.value, option) : undefined))

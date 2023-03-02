@@ -5,7 +5,7 @@ type TupleLikeInner<
   Cur extends T[] = []
 > = Like['length'] extends Cur['length'] ? Cur : TupleLikeInner<T, Like, [T, ...Cur]>
 
-interface StatusTable<Labels extends string[]> {
+interface StatusResult<Labels extends string[]> {
   result: {
     labels: Labels
     data: TupleLike<number, Labels>[]
