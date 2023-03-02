@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: corepack yarn
-      - name: Run checks
+      - name: Generate pages
         run: corepack yarn generate
       - name: Upload build result
         uses: actions/upload-artifact@v3
