@@ -14,7 +14,7 @@ import {
   convertStatusToChart,
   type OptionConvertStatusToChart,
   type StatusResultWithTime
-} from '~~/lib/status'
+} from '@/lib/status'
 
 use([
   CanvasRenderer,
