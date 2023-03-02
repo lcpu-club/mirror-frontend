@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center px-8 gap-2 backdrop-filter backdrop-blur">
+  <header class="flex items-center px-8 gap-2 backdrop-filter backdrop-blur z-10">
     <NuxtLink to="/" class="self-stretch flex items-center flex gap-2">
       <img :src="pku" class="h-12" />
       <img :src="mirror" class="h-8 mt-2 lt-md:hidden" />
