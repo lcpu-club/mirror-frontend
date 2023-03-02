@@ -11,7 +11,7 @@
       v-for="(link, i) of links"
       :key="i"
       :to="link.to"
-      class="self-stretch flex items-center px-4 hover:bg-#700e0d0a transition"
+      class="self-stretch flex items-center px-4 btn"
     >
       {{ link.text }}
     </NuxtLink>

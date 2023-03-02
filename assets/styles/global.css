@@ -5,3 +5,11 @@ html {
 body {
   @apply min-h-full grid place-items-stretch;
 }
+
+.btn {
+  @apply transition border-rounded;
+}
+
+.btn:hover {
+  @apply bg-#700e0d0a;
+}
