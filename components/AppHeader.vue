@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center px-8 gap-2 backdrop-filter backdrop-blur">
+  <header class="flex items-center px-8 gap-2 backdrop-filter backdrop-blur z-1898">
     <div>
       <img :src="pku" class="h-12" />
     </div>
