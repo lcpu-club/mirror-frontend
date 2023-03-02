@@ -1,9 +1,6 @@
 <template>
   <slot v-if="props.data.pending.value" name="loading">
-    <div v-if="props.data.pending.value" class="flex flex-col items-center gap-4 p-8">
-      <div class="i-mdi-loading w-16 h-16 animate-spin"></div>
-      <div>Loading ...</div>
-    </div>
+    <PlaceholderLoading v-if="props.data.pending.value" />
   </slot>
   <slot v-else-if="props.data.data.value"></slot>
   <slot v-else name="error">

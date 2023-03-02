@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     icons: true
   },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css'],
+  build: {
+    transpile: [/echarts/]
+  },
   content: {
     highlight: {
       theme: 'github-light'
