@@ -9,5 +9,8 @@ export default defineNuxtConfig({
     wind: true,
     icons: true
   },
-  css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css']
+  css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css'],
+  build: {
+    transpile: [/echarts/]
+  }
 })
