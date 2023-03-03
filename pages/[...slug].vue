@@ -24,7 +24,7 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th class="w-48">Size</th>
+              <th class="w-24">Size</th>
               <th class="w-72">Update At</th>
             </tr>
           </thead>
