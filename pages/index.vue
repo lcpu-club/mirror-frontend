@@ -22,7 +22,6 @@
               <th class="w-48 lt-md:hidden">Last Update</th>
               <th class="w-48 lt-md:hidden">Next Update</th>
               <th class="w-6">Status</th>
-              <th class="lt-xl:hidden">ID</th>
               <th class="lt-xl:hidden">Size</th>
               <th class="w-2"></th>
             </tr>
@@ -48,7 +47,6 @@
                 {{ new Date(mirror.nextSyncTime).toLocaleString('zh-CN') }}
               </td>
               <td>{{ mirror.state }}</td>
-              <td class="lt-xl:hidden">{{ mirror.id }}</td>
               <td class="lt-xl:hidden">{{ mirror.diskUsage }}</td>
               <td class="w-2"></td>
             </tr>
