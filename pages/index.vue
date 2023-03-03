@@ -54,7 +54,7 @@
         </table>
         <div class="flex justify-center p-2">
           <button
-            class="px-4 border border-rd hover:bg-#700e0d0a transition"
+            class="px-4 border border-rd hover:(bg-pku-red bg-op-3.9) transition"
             @click="respRef.refresh"
           >
             Refresh
@@ -89,7 +89,7 @@ const helps = computed(() =>
 }
 
 .mirrorlist-table tbody tr:hover {
-  @apply bg-#700e0d0a;
+  @apply bg-pku-red bg-op-3.9;
 }
 
 .mirrorlist-table tr {
