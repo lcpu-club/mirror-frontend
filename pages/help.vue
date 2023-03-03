@@ -6,7 +6,7 @@
         {{ item.navTitle || item.title }}
       </NuxtLink>
     </div>
-    <div class="shadow flex-1 max-w-256 flex flex-col p-4">
+    <div class="shadow flex-1 max-w-256 w-0 flex flex-col p-4">
       <NuxtPage />
     </div>
   </div>
