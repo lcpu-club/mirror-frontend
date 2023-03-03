@@ -1,6 +1,6 @@
 {
   "name": "@lcpu/mirror-frontend",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "license": "MIT",
   "packageManager": "yarn@3.4.1",
   "private": true,
