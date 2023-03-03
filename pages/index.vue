@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <div class="shadow flex-1 max-w-256 flex flex-col">
+    <div class="shadow flex-1 max-w-256 xl:max-w-320 flex flex-col">
       <div class="flex justify-between items-center p-4 border-b">
         <div class="text-2xl">Mirror List</div>
         <div>
@@ -17,10 +17,14 @@
         <table class="mirrorlist-table">
           <thead>
             <tr>
+              <th class="w-2"></th>
               <th>Name</th>
-              <th class="w-48">Last Update</th>
-              <th class="w-48">Next Update</th>
+              <th class="w-48 lt-md:hidden">Last Update</th>
+              <th class="w-48 lt-md:hidden">Next Update</th>
               <th class="w-6">Status</th>
+              <th class="lt-xl:hidden">ID</th>
+              <th class="lt-xl:hidden">Size</th>
+              <th class="w-2"></th>
             </tr>
           </thead>
           <tbody>
@@ -29,15 +33,24 @@
               :key="mirror.id"
               :class="[`mirrorstatus-${mirror.state}`]"
             >
+              <td class="w-2"></td>
               <td class="flex gap-1 items-center">
-                <NuxtLink :to="mirror.url">{{ mirror.name }}</NuxtLink>
+                <NuxtLink :to="mirror.url" :title="mirror.desc">{{ mirror.name }}</NuxtLink>
                 <NuxtLink v-if="mirror.id in helps" :to="helps[mirror.id]">
                   <div class="i-mdi-help-circle text-blue"></div>
                 </NuxtLink>
+                <span class="text-xs text-gray truncate lt-lg:hidden">{{ mirror.desc }}</span>
               </td>
-              <td>{{ new Date(mirror.lastSyncTime).toLocaleString('zh-CN') }}</td>
-              <td>{{ new Date(mirror.nextSyncTime).toLocaleString('zh-CN') }}</td>
+              <td class="lt-md:hidden">
+                {{ new Date(mirror.lastSyncTime).toLocaleString('zh-CN') }}
+              </td>
+              <td class="lt-md:hidden">
+                {{ new Date(mirror.nextSyncTime).toLocaleString('zh-CN') }}
+              </td>
               <td>{{ mirror.state }}</td>
+              <td class="lt-xl:hidden">{{ mirror.id }}</td>
+              <td class="lt-xl:hidden">{{ mirror.diskUsage }}</td>
+              <td class="w-2"></td>
             </tr>
           </tbody>
         </table>
@@ -86,11 +99,7 @@ const helps = computed(() =>
 }
 
 .mirrorlist-table tr > :first-child {
-  @apply pl-4 text-left;
-}
-
-.mirrorlist-table tr > :last-child {
-  @apply pr-4;
+  @apply text-left;
 }
 
 .mirrorlist-table td,
