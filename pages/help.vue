@@ -13,5 +13,9 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Help'
+})
+
 const articles = await queryContent('help').only(['_id', '_path', 'navTitle', 'title']).find()
 </script>
