@@ -24,7 +24,7 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th class="w-48">Size</th>
+              <th class="w-24">Size</th>
               <th class="w-72">Update At</th>
             </tr>
           </thead>
@@ -46,7 +46,7 @@
         </table>
         <div class="flex justify-center p-2">
           <button
-            class="px-4 border border-rd hover:bg-#700e0d0a transition"
+            class="px-4 border border-rd hover:(bg-pku-red bg-op-[0.039]) transition"
             @click="respRef.refresh"
           >
             Refresh

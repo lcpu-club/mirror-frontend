@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-#700e0d flex flex-col items-stretch text-white">
+  <footer class="bg-pku-red flex flex-col items-stretch text-white">
     <div class="flex p-8 items-center">
       <div>
         <div class="grid grid-cols-[auto_1fr] gap-x-2 place-items-start">

@@ -17,13 +17,11 @@
         <table class="mirrorlist-table">
           <thead>
             <tr>
-              <th class="w-2"></th>
               <th>Name</th>
               <th class="w-48 lt-md:hidden">Last Update</th>
               <th class="w-48 lt-md:hidden">Next Update</th>
               <th class="w-6">Status</th>
               <th class="lt-xl:hidden">Size</th>
-              <th class="w-2"></th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +30,6 @@
               :key="mirror.id"
               :class="[`mirrorstatus-${mirror.state}`]"
             >
-              <td class="w-2"></td>
               <td class="flex gap-1 items-center">
                 <NuxtLink :to="mirror.url" :title="mirror.desc">{{ mirror.name }}</NuxtLink>
                 <NuxtLink v-if="mirror.id in helps" :to="helps[mirror.id]" :title="mirror.id">
@@ -48,13 +45,12 @@
               </td>
               <td>{{ mirror.state }}</td>
               <td class="lt-xl:hidden">{{ mirror.diskUsage }}</td>
-              <td class="w-2"></td>
             </tr>
           </tbody>
         </table>
         <div class="flex justify-center p-2">
           <button
-            class="px-4 border border-rd hover:bg-#700e0d0a transition"
+            class="px-4 border border-rd hover:(bg-pku-red bg-op-3.9) transition"
             @click="respRef.refresh"
           >
             Refresh
@@ -89,7 +85,7 @@ const helps = computed(() =>
 }
 
 .mirrorlist-table tbody tr:hover {
-  @apply bg-#700e0d0a;
+  @apply bg-pku-red bg-op-3.9;
 }
 
 .mirrorlist-table tr {
@@ -102,7 +98,7 @@ const helps = computed(() =>
 
 .mirrorlist-table td,
 .mirrorlist-table th {
-  @apply py-2;
+  @apply py-2 px-2;
 }
 
 .mirrorstatus-error {
