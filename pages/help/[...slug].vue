@@ -11,6 +11,16 @@
     />
   </div>
   <ContentRenderer :value="computedArticle" tag="article" class="markdown-body" />
+  <div class="mt-2 pt-2 b-t flex">
+    <a
+      :href="`https://github.com/lcpu-club/mirror-frontend/edit/main/content/${article._file}`"
+      target="_blank"
+      class="btn p-2 flex items-center gap-2"
+    >
+      <div class="i-mdi-edit"></div>
+      Suggest Changes
+    </a>
+  </div>
 </template>
 
 <script setup lang="ts">

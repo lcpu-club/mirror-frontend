@@ -11,7 +11,7 @@
       :key="i"
       :to="link.to"
       class="self-stretch flex items-center px-4 btn square"
-      active-class="border-b-2 border-red bg-#700e0d05"
+      active-class="border-b-2 border-red bg-pku-red bg-op-2"
     >
       {{ link.text }}
     </NuxtLink>

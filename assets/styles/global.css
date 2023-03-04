@@ -1,5 +1,5 @@
 html {
-  @apply h-full overflow-scroll;
+  @apply h-full overflow-y-scroll;
 }
 
 body {
@@ -15,5 +15,5 @@ body {
 }
 
 .btn:hover {
-  @apply bg-#700e0d0a;
+  @apply bg-pku-red bg-op-3.9;
 }

@@ -11,7 +11,12 @@ export default defineNuxtConfig({
   modules: ['@unocss/nuxt', '@nuxt/content'],
   unocss: {
     wind: true,
-    icons: true
+    icons: true,
+    theme: {
+      colors: {
+        pkuRed: 'rgb(112, 14, 13)'
+      }
+    }
   },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css'],
   build: {
