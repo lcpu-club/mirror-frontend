@@ -1,5 +1,5 @@
 html {
-  @apply h-full overflow-scroll;
+  @apply h-full;
 }
 
 body {

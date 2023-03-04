@@ -9,7 +9,9 @@ title: About
 ## 特别鸣谢
 
 <div align="center">
-  北京大学开源镜像站由计算中心提供硬件支持与技术支持
+    <div>
+        北京大学开源镜像站由计算中心提供硬件支持与技术支持
+    </div>
   <br/>
   <a href="https://its.pku.edu.cn" target="_blank">
     <img src="https://www.pku.edu.cn/Uploads/Picture/2019/12/26/s5e04176fbbfa3.png" width="200">
