@@ -1,0 +1,9 @@
+@import 'github-markdown-css/github-markdown-light.css';
+
+.markdown-body ol {
+  @apply list-decimal;
+}
+
+.markdown-body ul {
+  @apply list-disc;
+}
