@@ -17,3 +17,11 @@ body {
 .btn:hover {
   @apply bg-pku-red bg-op-3.9;
 }
+
+.markdown-body ol {
+  @apply list-decimal;
+}
+
+.markdown-body ul {
+  @apply list-disc;
+}
