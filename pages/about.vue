@@ -29,7 +29,7 @@
               <img src="@/assets/images/pkuosc.svg" width="200" />
             </a>
           </div>
-          <div>北京大学Linux俱乐部</div>
+          <div>北京大学 Linux 俱乐部</div>
           <div>
             <a href="https://lcpu.club">
               <img src="https://lcpu.club/lcpulogo.svg" width="100" />

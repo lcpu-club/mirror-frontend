@@ -5,7 +5,7 @@ navTitle: Kubernetes
 
 ## Kubernetes 镜像配置
 
-CenOS 中，创建 Kubernetes 镜像配置文件`/etc/yum.repos.d/kubernetes.repo`。
+CentOS 中，创建 Kubernetes 镜像配置文件 `/etc/yum.repos.d/kubernetes.repo`。
 
 文件内容为：
 

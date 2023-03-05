@@ -30,7 +30,7 @@ apt update && apt upgrade
 
 编辑 `$PREFIX/etc/apt/sources.list` 修改为如下内容
 
-```
+```unix-conf
 deb https://mirrors.pku.edu.cn/termux/termux-main stable main
 ```
 

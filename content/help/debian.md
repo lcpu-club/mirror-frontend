@@ -5,9 +5,9 @@ navTitle: Debian
 
 ## 镜像配置
 
-Debian 镜像配置文件位于`/etc/apt/sources.list`。
+Debian 镜像配置文件位于 `/etc/apt/sources.list`。
 
-手动替换原有的`/etc/apt/sources.list`文件内容为：
+手动替换原有的 `/etc/apt/sources.list` 文件内容为：
 
 ```unix-conf
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释

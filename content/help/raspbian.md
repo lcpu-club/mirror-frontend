@@ -30,9 +30,9 @@ Raspbian 并非由树莓派的开发与维护机构 The Raspberry Pi Foundation 
 
 首先通过 `uname -a` 命令查看系统架构，通过 `cat /etc/os-release` 命令查看系统版本。
 
-各 Debian 下方记为`<codename>`，请注意自行替换：
+各 Debian 下方记为 `<codename>`，请注意自行替换：
 
-```
+```unix-conf
 # armv7l 用户：编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代
 deb http://mirrors.pku.edu.cn/raspbian/raspbian/ <codename> main non-free contrib rpi
 # deb-src http://mirrors.pku.edu.cn/raspbian/raspbian/ <codename> main non-free contrib rpi
@@ -55,9 +55,9 @@ deb https://mirrors.pku.edu.cn/debian-security <codename>-security main contrib 
 deb https://mirrors.pku.edu.cn/raspberrypi/ <codename> main
 ```
 
-注意：网址末尾的`raspbian`重复两次是必须的。因为 Raspbian 的仓库中除了 APT 软件源还包含其他代码。APT 软件源不在仓库的根目录，而在`raspbian/`子目录下。
+注意：网址末尾的 `raspbian` 重复两次是必须的。因为 Raspbian 的仓库中除了 APT 软件源还包含其他代码。APT 软件源不在仓库的根目录，而在 `raspbian/` 子目录下。
 
-编辑镜像站后，请使用`sudo apt-get update`命令，更新软件源列表，同时检查您的编辑是否正确。
+编辑镜像站后，请使用 `sudo apt-get update` 命令，更新软件源列表，同时检查您的编辑是否正确。
 
 ### 相关链接
 

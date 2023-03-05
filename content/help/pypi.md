@@ -14,6 +14,6 @@ pip install -i https://mirrors.pku.edu.cn/pypi/simple package_name
 ### 永久生效
 
 ```bash
-pip install pip -U -i https://mirrors.pku.edu.cn/pypi/simple # 首先将pip版本升级至10.0.0+
+pip install pip -U -i https://mirrors.pku.edu.cn/pypi/simple # 首先将 pip 版本升级至 10.0.0+
 pip config set global.index-url https://mirrors.pku.edu.cn/pypi/simple
 ```
