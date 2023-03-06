@@ -1,6 +1,6 @@
 ---
 mirrorId: opensuse
-navTitle: OpenSUSE
+title: OpenSUSE
 ---
 
 ## 镜像配置
@@ -17,17 +17,17 @@ sudo zypper mr -da
 
 然后根据你使用的版本进行配置：
 
-**openSUSE Tumbleweed 配置方法**
+#### openSUSE Tumbleweed 配置方法
 
-```
+```bash
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/tumbleweed/repo/oss/' pku-mirror-oss
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/tumbleweed/repo/non-oss/' pku-mirror-non-oss
 sudo zypper ar -fcg 'https://mirrors.pku.edu.cn/opensuse/update/tumbleweed/' pku-mirror-update
 ```
 
-**openSUSE Leap 配置方法**
+#### openSUSE Leap 配置方法
 
-```
+```bash
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/distribution/leap/$releasever/repo/oss/' pku-mirror-oss
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/distribution/leap/$releasever/repo/non-oss/' pku-mirror-non-oss
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/update/leap/$releasever/oss/' pku-mirror-update
@@ -36,14 +36,14 @@ sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/update/leap/$releasever
 
 Leap 15.3 或更新版本还需要添加 sle 和 backports 源：
 
-```
+```bash
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/update/leap/$releasever/sle/' pku-mirror-sle-update
 sudo zypper ar -cfg 'https://mirrors.pku.edu.cn/opensuse/update/leap/$releasever/backports/' pku-mirror-backports-update
 ```
 
 最后刷新软件源：
 
-```
+```bash
 sudo zypper ref
 ```
 

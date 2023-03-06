@@ -1,6 +1,6 @@
 ---
 mirrorId: ctan
-navTitle: CTAN
+title: CTAN
 ---
 
 CTAN (The Comprehensive TeX Archive Network) 镜像源可以使用 TeX Live 管理器 `tlmgr` 更改。

@@ -1,6 +1,6 @@
 ---
 mirrorId: ubuntu
-navTitle: Ubuntu
+title: Ubuntu
 variables:
   ubuntu_codename:
     type: select
@@ -23,7 +23,7 @@ Ubuntu 镜像配置文件位于`/etc/apt/sources.list`。
 sudo sed -ri.bak -e 's/\/\/.*?(archive.ubuntu.com|mirrors.*?)\/ubuntu/\/\/mirrors.pku.edu.cn\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list
 ```
 
-注：该命令表示将`archive.ubuntu.com`和`mirrors.*`替换为`mirrors.pku.edu.cn`，并把`security.ubuntu.com`删除。
+注：该命令表示将 `archive.ubuntu.com` 和 `mirrors.*` 替换为 `mirrors.pku.edu.cn`，并把 `security.ubuntu.com` 删除。
 
 修改文件后需要更新索引：
 
