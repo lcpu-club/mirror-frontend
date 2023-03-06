@@ -1,6 +1,6 @@
 ---
 mirrorId: linuxmint
-navTitle: Linux Mint
+title: Linux Mint
 ---
 
 ## 镜像配置

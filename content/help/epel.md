@@ -1,6 +1,6 @@
 ---
 mirrorId: epel
-navTitle: EPEL
+title: EPEL
 ---
 
 ## EPEL 安装

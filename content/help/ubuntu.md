@@ -1,6 +1,6 @@
 ---
 mirrorId: ubuntu
-navTitle: Ubuntu
+title: Ubuntu
 variables:
   ubuntu_codename:
     type: select

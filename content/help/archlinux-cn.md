@@ -1,6 +1,6 @@
 ---
 mirrorId: archlinuxcn
-navTitle: Arch Linux CN
+title: Arch Linux CN
 ---
 
 ## 镜像配置

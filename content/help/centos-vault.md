@@ -1,6 +1,6 @@
 ---
 mirrorId: centos-vault
-navTitle: CentOS Vault
+title: CentOS Vault
 ---
 
 ## 镜像配置

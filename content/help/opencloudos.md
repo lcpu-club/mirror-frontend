@@ -1,6 +1,6 @@
 ---
 mirrorId: opencloudos
-navTitle: OpenCloudOS
+title: OpenCloudOS
 ---
 
 ## 使用说明

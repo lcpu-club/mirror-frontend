@@ -1,6 +1,6 @@
 ---
 mirrorId: termux
-navTitle: Termux
+title: Termux
 ---
 
 # 镜像配置

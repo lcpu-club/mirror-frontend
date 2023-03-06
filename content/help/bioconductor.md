@@ -1,6 +1,6 @@
 ---
 mirrorId: bioconductor
-navTitle: Bioconductor
+title: Bioconductor
 ---
 
 请在 `~/.Rprofile` 后面添加一行：

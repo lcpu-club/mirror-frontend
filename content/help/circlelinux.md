@@ -1,6 +1,6 @@
 ---
 mirrorId: circle
-navTitle: Circle Linux
+title: Circle Linux
 ---
 
 ## 镜像配置

@@ -1,6 +1,6 @@
 ---
 mirrorId: git-repos
-navTitle: Git Repos
+title: Git Repos
 ---
 
 ## Git-repos 使用说明
