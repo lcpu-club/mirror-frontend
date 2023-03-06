@@ -1,6 +1,6 @@
 <template>
   <div class="border-b">
-    <h1 class="text-2xl">{{ article.navTitle }}</h1>
+    <h1 class="text-2xl">{{ article.title }}</h1>
   </div>
   <div class="flex justify-center p-4 gap-2">
     <VariableInput
