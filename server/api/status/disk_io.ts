@@ -1,5 +1,5 @@
 export interface StatusDiskIo extends StatusResult<['time', 'read', 'read_cache']> {}
 
 export default defineEventHandler<StatusDiskIo>((event) =>
-  proxyRequest(event, `https://mirrors.pku.edu.cn/monitor_device_status/disk_io.json`)
+  proxyRequest(event, `${process.env.MIRROR_API_STATUS}/disk_io.json`)
 )
