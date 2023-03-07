@@ -16,7 +16,7 @@
         <img :src="pku" class="h-16" draggable="false" />
       </div>
     </div>
-    <div class="bg-#230403 px-8 flex justify-between font-mono">
+    <div class="bg-#230403 px-8 flex justify-between font-mono !hidden">
       <div>{{ config.public.version }}</div>
       <a
         :href="'https://github.com/lcpu-club/mirror-frontend/commit/' + hash"
