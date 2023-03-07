@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   },
   ssr: false,
   nitro: {
+    preset: 'service-worker',
     devProxy: {
       '/monitor_device_status': {
         target: 'http://mirrors.pku.edu.cn/monitor_device_status',
