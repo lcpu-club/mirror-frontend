@@ -10,8 +10,10 @@ export interface IMirrorEntry {
 }
 
 export default defineEventHandler(async () => {
-  const mirrors = await fetch(`${process.env.MIRROR_API_MIRRORS}/mirrors`).then((res) => res.json())
-  const status = await fetch(`${process.env.MIRROR_API_MIRRORS}/status`).then((res) => res.json())
+  const mirrors = await fetch(`https://mirrors.pku.edu.cn/monitor/mirrors`).then((res) =>
+    res.json()
+  )
+  const status = await fetch(`https://mirrors.pku.edu.cn/monitor/status`).then((res) => res.json())
   const data = status.map(
     ({ diskUsage, id, lastSyncTime, nextSyncTime, state }: Record<string, any>) => ({
       id,

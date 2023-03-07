@@ -1,5 +1,5 @@
 export interface StatusDiskSpace extends StatusResult<['time', 'used', 'avai']> {}
 
 export default defineEventHandler<StatusDiskSpace>((event) =>
-  proxyRequest(event, `${process.env.MIRROR_API_STATUS}/disk_space.json`)
+  proxyRequest(event, `https://mirrors.pku.edu.cn/monitor_device_status/disk_space.json`)
 )
