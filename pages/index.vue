@@ -62,11 +62,13 @@
 </template>
 
 <script setup lang="ts">
+import { useMirrorList } from '@/lib/api'
+
 useHead({
   title: 'Mirror List'
 })
 
-const respRef = useFetch('/api/mirrorlist')
+const respRef = useMirrorList()
 const search = ref('')
 
 const helpList = useAsyncData(() => queryContent('help').only(['_path', 'mirrorId']).find())

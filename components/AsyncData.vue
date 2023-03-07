@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  data: ReturnType<typeof useFetch>
+  data: ReturnType<typeof useAsyncData>
 }>()
 
 const router = useRouter()

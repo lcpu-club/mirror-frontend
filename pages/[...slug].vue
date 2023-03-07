@@ -58,7 +58,8 @@
 </template>
 
 <script setup lang="ts">
-import { prettySize } from '~~/lib/pretty'
+import { useFileList } from '@/lib/api'
+import { prettySize } from '@/lib/pretty'
 
 const route = useRoute()
 
@@ -68,11 +69,7 @@ const slugLinks = computed(() =>
 )
 const path = computed(() => slugs.value.join('/'))
 
-const respRef = useFetch('/api/filelist', {
-  query: {
-    path
-  }
-})
+const respRef = useFileList(path.value)
 const search = ref('')
 
 function getClass(type: string, name: string) {
