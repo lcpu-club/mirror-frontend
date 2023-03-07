@@ -33,7 +33,7 @@
               <td class="flex gap-1 items-center">
                 <NuxtLink :to="mirror.url" :title="mirror.desc">{{ mirror.name }}</NuxtLink>
                 <NuxtLink v-if="mirror.id in helps" :to="helps[mirror.id]" :title="mirror.id">
-                  <div class="i-mdi-help-circle text-blue"></div>
+                  <div class="i-mdi-help-circle text-blue">Help</div>
                 </NuxtLink>
                 <span class="text-xs text-gray truncate lt-lg:hidden">{{ mirror.desc }}</span>
               </td>
