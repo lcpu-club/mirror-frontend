@@ -39,10 +39,21 @@ export default defineNuxtConfig({
       version
     }
   },
-  routeRules: {
-    '/**': { prerender: false },
-    '/': { prerender: true },
-    '/help/**': { prerender: true },
-    '/status/**': { prerender: true }
+  ssr: false,
+  nitro: {
+    devProxy: {
+      '/monitor_device_status': {
+        target: 'http://mirrors.pku.edu.cn/monitor_device_status',
+        changeOrigin: true
+      },
+      '/monitor': {
+        target: 'http://mirrors.pku.edu.cn/monitor',
+        changeOrigin: true
+      },
+      '/files': {
+        target: 'http://mirrors.pku.edu.cn/files',
+        changeOrigin: true
+      }
+    }
   }
 })

@@ -11,7 +11,25 @@ export interface IMirrorEntry {
   state: 'done' | 'error' | 'sync'
 }
 
-export const useMirrorList = () => useFetch<IMirrorEntry[]>('/api/mirrorlist')
+export const useMirrorList = () =>
+  useAsyncData<IMirrorEntry[]>(async () => {
+    const mirrors = await fetch(`/monitor/mirrors`).then((res) => res.json())
+    const status = await fetch(`/monitor/status`).then((res) => res.json())
+    const data = status.map(
+      ({ diskUsage, id, lastSyncTime, nextSyncTime, state }: Record<string, any>) => ({
+        id,
+        name: mirrors[id].name,
+        desc: mirrors[id].describe,
+        url: mirrors[id].url,
+        diskUsage,
+        lastSyncTime,
+        nextSyncTime,
+        state
+      })
+    ) as IMirrorEntry[]
+    data.sort((a, b) => a.name.localeCompare(b.name))
+    return data
+  })
 
 export interface IFileEntry {
   mtime: string
@@ -21,10 +39,14 @@ export interface IFileEntry {
 }
 
 export const useFileList = (path: string) =>
-  useFetch<IFileEntry[]>('/api/filelist', {
-    query: {
-      path
-    }
+  useAsyncData<IFileEntry[]>(async () => {
+    const data = (await fetch(`/files/${path}/`).then((res) => res.json())) as IFileEntry[]
+    return data
   })
 
-export const useStatus = (type: string) => useFetch<StatusResultWithTime>(`/api/status/${type}`)
+export const useStatus = (type: string) =>
+  useAsyncData<StatusResultWithTime>(async () => {
+    const resp = await fetch(`/monitor_device_status/${type}.json`)
+    const data = await resp.json()
+    return data
+  })
