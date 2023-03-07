@@ -34,8 +34,16 @@ import pku from '@/assets/images/pku-withtext.svg'
 
 const links = [
   {
-    label: 'Source Code',
+    label: 'Backend',
     name: 'GitHub',
+    attr: {
+      href: 'https://github.com/PKUOSC',
+      target: '_blank'
+    }
+  },
+  {
+    label: 'Frontend',
+    name: 'lcpu-club/mirror-frontend',
     attr: {
       href: 'https://github.com/lcpu-club/mirror-frontend',
       target: '_blank'
