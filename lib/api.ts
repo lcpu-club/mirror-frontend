@@ -39,13 +39,13 @@ export interface IFileEntry {
 }
 
 export const useFileList = (path: string) =>
-  useAsyncData<IFileEntry[]>(async () => {
+  useAsyncData<IFileEntry[]>(`filelist#${path}`, async () => {
     const data = (await fetch(`/files/${path}/`).then((res) => res.json())) as IFileEntry[]
     return data
   })
 
 export const useStatus = (type: string) =>
-  useAsyncData<StatusResultWithTime>(async () => {
+  useAsyncData<StatusResultWithTime>(`status#${type}`, async () => {
     const resp = await fetch(`/monitor_device_status/${type}.json`)
     const data = await resp.json()
     return data
