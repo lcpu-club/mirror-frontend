@@ -1,8 +1,8 @@
 <template>
-  <div class="border-b">
-    <h1 class="text-2xl">{{ article.title }}</h1>
+  <div class="flex justify-between items-center p-4 border-b">
+    <div class="text-2xl">{{ article.title }}</div>
   </div>
-  <div class="flex justify-center p-4 gap-2">
+  <div class="flex justify-center pt-4 gap-2">
     <VariableInput
       v-for="key of Object.keys(variables)"
       :key="key"
@@ -10,7 +10,7 @@
       :config="variables[key]"
     />
   </div>
-  <ContentRenderer :value="computedArticle" tag="article" class="markdown-body" />
+  <ContentRenderer :value="computedArticle" tag="article" class="markdown-body p-4 pt-0" />
   <div class="mt-2 pt-2 b-t flex">
     <a
       :href="`https://github.com/lcpu-club/mirror-frontend/edit/main/content/${article._file}`"

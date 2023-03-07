@@ -1,6 +1,6 @@
 <template>
-  <div class="border-b">
-    <h1 class="text-2xl">Mirror Help</h1>
+  <div class="flex justify-between items-center p-4 border-b">
+    <div class="text-2xl">Mirror Help</div>
   </div>
-  <p class="pt-4">Select a help entry from left panel.</p>
+  <p class="p-4">Select a help entry from left panel.</p>
 </template>
