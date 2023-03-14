@@ -11,7 +11,6 @@ import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import VChart from 'vue-echarts'
 import { convertStatusToChart, type OptionConvertStatusToChart } from '@/lib/status'
-import { useStatus } from '@/lib/api'
 
 use([
   CanvasRenderer,

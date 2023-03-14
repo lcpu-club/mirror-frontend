@@ -62,8 +62,6 @@
 </template>
 
 <script setup lang="ts">
-import { useMirrorList } from '@/lib/api'
-
 useHead({
   title: 'Mirror List'
 })

@@ -58,7 +58,6 @@
 </template>
 
 <script setup lang="ts">
-import { useFileList } from '@/lib/api'
 import { prettySize } from '@/lib/pretty'
 
 const route = useRoute()

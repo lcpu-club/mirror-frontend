@@ -1,4 +1,4 @@
-import { StatusResultWithTime } from './status'
+import { StatusResultWithTime } from '../lib/status'
 
 export interface IMirrorEntry {
   id: string
