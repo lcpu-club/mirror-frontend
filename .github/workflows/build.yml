@@ -1,4 +1,4 @@
-name: SSG Build
+name: Build nuxt server
 
 on:
   push:
@@ -8,9 +8,16 @@ on:
 
   workflow_dispatch:
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,10 +38,21 @@ jobs:
       - name: Install dependencies
         run: corepack yarn
       - name: Generate pages
-        run: corepack yarn generate
+        run: corepack yarn build
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: latest
       - name: Upload build result
         uses: actions/upload-artifact@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           name: dist
-          path: .output/public
+          path: .output
