@@ -32,8 +32,19 @@
             >
               <td class="flex gap-1 items-center">
                 <NuxtLink :to="mirror.url" :title="mirror.desc">{{ mirror.name }}</NuxtLink>
-                <NuxtLink v-if="mirror.id in helps" :to="helps[mirror.id]" :title="mirror.id">
+                <NuxtLink
+                  v-if="mirror.id in helps"
+                  :to="helps[mirror.id]._path"
+                  :title="mirror.id"
+                  class="flex"
+                >
                   <div class="i-mdi-help-circle text-blue">Help</div>
+                  <div
+                    v-if="helps[mirror.id].hasDownloads"
+                    class="i-mdi-download-circle text-green"
+                  >
+                    Download
+                  </div>
                 </NuxtLink>
                 <span class="text-xs text-gray truncate lt-lg:hidden">{{ mirror.desc }}</span>
               </td>
@@ -69,9 +80,11 @@ useHead({
 const respRef = useMirrorList()
 const search = ref('')
 
-const helpList = useAsyncData(() => queryContent('help').only(['_path', 'mirrorId']).find())
+const helpList = useAsyncData(() =>
+  queryContent('help').only(['_path', 'mirrorId', 'hasDownloads']).find()
+)
 const helps = computed(() =>
-  Object.fromEntries(helpList.data.value?.map((help) => [help.mirrorId, help._path]) ?? [])
+  Object.fromEntries(helpList.data.value?.map((help) => [help.mirrorId, help]) ?? [])
 )
 </script>
 
