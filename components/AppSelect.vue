@@ -11,14 +11,14 @@
     <ul
       v-show="showPop"
       ref="selectPop"
-      class="pos-absolute bg-white mx-1 border border-solid border-rounded border-color-[#d4d4d4]"
+      class="pos-absolute z-10 bg-white mx-1 border border-solid border-rounded border-color-[#d4d4d4]"
     >
       <li
         v-for="option in options"
         :key="option.value"
         :class="[
-          'px-2 py-1 cursor-pointer hover-color-white hover-bg-[#861210]',
-          option.value === modelValue ? 'color-white bg-[#861210]' : ''
+          'px-2 py-1 cursor-pointer hover-color-white hover-bg-pku-red',
+          option.value === modelValue ? 'color-white bg-pku-red' : ''
         ]"
         @click="emit('update:modelValue', option.value), (showPop = !showPop)"
       >
@@ -47,6 +47,10 @@ const showPop = ref(false)
 
 const selectBox = ref<HTMLElement | null>(null)
 const selectPop = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  onClickOutside(selectPop, () => (showPop.value = false))
+})
 
 watch([showPop], () => {
   if (selectPop.value && selectBox.value) {

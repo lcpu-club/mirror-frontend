@@ -6,7 +6,7 @@
     Select a help entry from left panel.
     <br />
     Mirrors with direct download links are marked with a download icon
-    <div class="inline-block i-mdi-download-circle text-blue"></div>
+    <div class="inline-block i-mdi-download-circle text-blue align-base relative bottom--0.5"></div>
     .
     <br />
     Or choose one from the list below:

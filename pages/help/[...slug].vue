@@ -2,11 +2,11 @@
   <div class="flex justify-between items-center p-4">
     <div class="text-2xl">{{ article.title }}</div>
   </div>
-  <div v-if="tabs.length > 1" class="flex justify-center gap-4 border-b">
+  <div v-if="tabs.length > 1" class="flex justify-center lg:justify-start border-b">
     <button
       v-for="(tab, i) of tabs"
       :key="i"
-      class="btn square p-2"
+      class="btn square px-4 py-2"
       :class="i === tabIndex ? 'border-b-2 border-red bg-pku-red bg-op-2' : []"
       @click="tabIndex = i"
     >
@@ -15,7 +15,7 @@
   </div>
   <HelpContent v-if="tabIndex === 0" :article="article" />
   <HelpDownload v-else-if="tabIndex === 1" :article="article" />
-  <div class="mt-2 pt-2 b-t flex">
+  <div class="mt-2 b-t flex">
     <a
       :href="`https://github.com/lcpu-club/mirror-frontend/edit/main/content/${article._file}`"
       target="_blank"

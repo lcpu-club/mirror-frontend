@@ -1,13 +1,18 @@
 <template>
   <div>
-    <div class="flex justify-center pt-4 gap-2">
-      <VariableInput
-        v-for="key of Object.keys(variables)"
-        :key="key"
-        v-model="actualVariables[key]"
-        :config="variables[key]"
-      />
-    </div>
+    <template v-if="Object.keys(variables).length">
+      <div
+        class="grid grid-cols-[auto_1fr] items-center justify-items-start justify-start p-4 gap-x-4 gap-y-2"
+      >
+        <VariableInput
+          v-for="key of Object.keys(variables)"
+          :key="key"
+          v-model="actualVariables[key]"
+          :config="variables[key]"
+          class="contents"
+        />
+      </div>
+    </template>
     <ContentRenderer :value="computedArticle" tag="article" class="markdown-body p-4 pt-0" />
   </div>
 </template>
