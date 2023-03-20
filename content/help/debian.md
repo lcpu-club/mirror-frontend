@@ -1,6 +1,6 @@
 ---
 mirrorId: debian
-navTitle: Debian
+title: Debian
 ---
 
 ## 镜像配置

@@ -1,41 +1,19 @@
 <template>
   <div class="flex justify-center">
-    <div class="shadow flex-1 max-w-256 flex flex-col gap-4 p-4">
-      <div class="flex justify-between items-center border-b">
+    <div class="shadow flex-1 max-w-256 flex flex-col gap-4">
+      <div class="flex justify-between items-center p-4 border-b">
         <div class="text-2xl">About</div>
       </div>
-      <article class="markdown-body">
-        本站支持 IPV4 和 IPV6 访问，提供 HTTP，HTTPS 服务。
+      <article class="markdown-body p-4">
+        本站支持 IPV4 和 IPV6 访问，提供 HTTP 和 HTTPS 服务。
         <br />
-        我们欢迎热爱开源，热爱镜像的同学加入我们。
-
-        <h2>特别鸣谢</h2>
-        <div align="center">
-          <div>北京大学开源镜像站由计算中心提供硬件支持与技术支持</div>
-          <br />
-          <a href="https://its.pku.edu.cn" target="_blank">
-            <img
-              src="https://www.pku.edu.cn/Uploads/Picture/2019/12/26/s5e04176fbbfa3.png"
-              width="200"
-            />
-          </a>
-        </div>
-
-        <h2>加入我们</h2>
-        <div class="grid grid-rows-[auto_1fr] place-items-center gap-2 grid-flow-col">
-          <div>北京大学开源软件协会</div>
-          <div>
-            <a href="https://github.com/PKUOSC" target="_blank">
-              <img src="@/assets/images/pkuosc.svg" width="200" />
-            </a>
-          </div>
-          <div>北京大学 Linux 俱乐部</div>
-          <div>
-            <a href="https://lcpu.club">
-              <img src="https://lcpu.club/lcpulogo.svg" width="100" />
-            </a>
-          </div>
-        </div>
+        镜像站由<a href="https://its.pku.edu.cn" target="_blank">北京大学计算中心</a>运行维护。
+        <br />
+        镜像站由一群热爱开源的小伙伴开发。
+        <br />
+        镜像站新版本前端由<a href="https://lcpu.club">北京大学 Linux 俱乐部</a>
+        提供， Linux 俱乐部是是由学生自发成立的，以学习研究 Linux
+        操作系统和其它各种与开源相关的软硬件技术为目的民间组织。欢迎大家加入 Linux 俱乐部。
       </article>
     </div>
   </div>

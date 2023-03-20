@@ -1,6 +1,6 @@
 ---
 mirrorId: kubernetes
-navTitle: Kubernetes
+title: Kubernetes
 ---
 
 ## Kubernetes 镜像配置

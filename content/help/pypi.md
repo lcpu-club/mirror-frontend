@@ -1,6 +1,6 @@
 ---
 mirrorId: pypi
-navTitle: PyPI
+title: PyPI
 ---
 
 ## 镜像配置

@@ -10,11 +10,7 @@ import {
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import VChart from 'vue-echarts'
-import {
-  convertStatusToChart,
-  type OptionConvertStatusToChart,
-  type StatusResultWithTime
-} from '@/lib/status'
+import { convertStatusToChart, type OptionConvertStatusToChart } from '@/lib/status'
 
 use([
   CanvasRenderer,
@@ -31,7 +27,7 @@ const props = defineProps<{
   option?: OptionConvertStatusToChart
 }>()
 
-const respRef = useFetch<StatusResultWithTime>(props.api)
+const respRef = useStatus(props.api)
 const chartOption = convertStatusToChart(props.option)(respRef.data)
 </script>
 

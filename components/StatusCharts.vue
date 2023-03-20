@@ -9,35 +9,35 @@
 <script setup lang="ts">
 const charts = [
   {
-    api: '/api/status/network',
+    api: 'network',
     label: 'Network Traffic',
     options: {
       yAxisLabelFormatter: (val: number) => `${val / 1000} Mbps`
     }
   },
   {
-    api: '/api/status/disk_io',
+    api: 'disk_io',
     label: 'Disk I/O',
     options: {
       yAxisLabelFormatter: (val: number) => `${val / 1000} MB/s`
     }
   },
   {
-    api: '/api/status/disk_space',
+    api: 'disk_space',
     label: 'Disk Space',
     options: {
       yAxisLabelFormatter: (val: number) => `${val / 1000000} TB`
     }
   },
   {
-    api: '/api/status/cpu',
+    api: 'cpu',
     label: 'CPU Usage',
     options: {
       yAxisLabelFormatter: (val: number) => `${val}%`
     }
   },
   {
-    api: '/api/status/ram',
+    api: 'ram',
     label: 'RAM Usage',
     options: {
       yAxisLabelFormatter: (val: number) => `${val} MiB`

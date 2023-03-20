@@ -1,6 +1,6 @@
 ---
 mirrorId: anaconda
-navTitle: Anaconda
+title: Anaconda
 ---
 
 ## 镜像配置

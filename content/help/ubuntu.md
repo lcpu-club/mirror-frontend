@@ -1,6 +1,6 @@
 ---
 mirrorId: ubuntu
-navTitle: Ubuntu
+title: Ubuntu
 variables:
   ubuntu_codename:
     type: select
@@ -11,6 +11,9 @@ variables:
       - { name: 'Ubuntu 16.04 LTS', value: 'xenial' }
       - { name: 'Ubuntu 14.04 LTS', value: 'trusty' }
     default: 'focal'
+downloads:
+  - name: 'Ubuntu 22.04 (amd64)'
+    link: '/ubuntu-releases/jammy/ubuntu-22.04.2-live-server-amd64.iso'
 ---
 
 ## 镜像配置

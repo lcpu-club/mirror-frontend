@@ -40,9 +40,6 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/**': { prerender: false },
-    '/': { prerender: true },
-    '/help/**': { prerender: true },
-    '/status/**': { prerender: true }
+    '/help/**': { prerender: true }
   }
 })

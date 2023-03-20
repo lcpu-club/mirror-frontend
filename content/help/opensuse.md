@@ -1,6 +1,6 @@
 ---
 mirrorId: opensuse
-navTitle: OpenSUSE
+title: OpenSUSE
 ---
 
 ## 镜像配置

@@ -1,6 +1,6 @@
 ---
 mirrorId: manjaro
-navTitle: Manjaro
+title: Manjaro
 ---
 
 ## 镜像配置

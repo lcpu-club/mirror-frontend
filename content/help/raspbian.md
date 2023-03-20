@@ -1,6 +1,6 @@
 ---
 mirrorId: raspbian
-navTitle: Raspbian
+title: Raspbian
 ---
 
 ## Raspbian 镜像使用帮助

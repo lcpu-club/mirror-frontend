@@ -1,6 +1,6 @@
 ---
 mirrorId: openeuler
-navTitle: OpenEuler
+title: OpenEuler
 ---
 
 ## 使用说明
