@@ -8,15 +8,20 @@ export default defineNuxtConfig({
   typescript: {
     shim: false
   },
-  modules: ['@unocss/nuxt', '@nuxt/content'],
+  modules: ['@unocss/nuxt', '@nuxt/content', '@nuxtjs/color-mode'],
   unocss: {
     wind: true,
     icons: true,
     theme: {
       colors: {
-        pkuRed: 'rgb(112, 14, 13)'
+        pkuRed: 'rgb(112, 14, 13)',
+        darkFront: '#c9d1d9',
+        darkBack: '#0d1117'
       }
     }
+  },
+  colorMode: {
+    classSuffix: ''
   },
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css'],
   build: {
@@ -24,7 +29,10 @@ export default defineNuxtConfig({
   },
   content: {
     highlight: {
-      theme: 'github-light'
+      theme: {
+        light: 'github-light',
+        dark: 'github-dark'
+      }
     },
     markdown: {
       anchorLinks: {

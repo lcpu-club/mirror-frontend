@@ -20,7 +20,11 @@ function rawConvertStatusToChart<S extends StatusResultWithTime>(
         textStyle: {
           fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif'
         },
-        legend: {},
+        legend: {
+          textStyle: {
+            color: '#666'
+          }
+        },
         tooltip: {
           trigger: 'axis',
           textStyle: {
