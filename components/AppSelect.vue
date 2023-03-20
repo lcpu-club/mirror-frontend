@@ -17,8 +17,8 @@
         v-for="option in options"
         :key="option.value"
         :class="[
-          'px-2 py-1 cursor-pointer hover-color-white hover-bg-[#861210]',
-          option.value === modelValue ? 'color-white bg-[#861210]' : ''
+          'px-2 py-1 cursor-pointer hover-color-white hover-bg-pku-red',
+          option.value === modelValue ? 'color-white bg-pku-red' : ''
         ]"
         @click="emit('update:modelValue', option.value), (showPop = !showPop)"
       >
