@@ -49,7 +49,7 @@ const selectBox = ref<HTMLElement | null>(null)
 const selectPop = ref<HTMLElement | null>(null)
 
 onMounted(() => {
-  onClickOutside(selectPop, () => showPop.value = false)
+  onClickOutside(selectPop, () => (showPop.value = false))
 })
 
 watch([showPop], () => {
