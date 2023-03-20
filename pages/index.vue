@@ -120,10 +120,10 @@ const helps = computed(() =>
 }
 
 .mirrorstatus-error {
-  @apply bg-red-100;
+  @apply bg-red-100 dark:bg-red-900;
 }
 
 .mirrorstatus-sync {
-  @apply bg-blue-100;
+  @apply bg-blue-100 dark:bg-blue-900;
 }
 </style>
