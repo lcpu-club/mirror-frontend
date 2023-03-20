@@ -2,7 +2,7 @@
   <header class="flex items-center px-8 backdrop-filter backdrop-blur z-10">
     <NuxtLink to="/" class="self-stretch flex items-center flex gap-2">
       <img :src="pku" class="h-12" />
-      <img :src="mirror" class="h-8 mt-2 lt-md:hidden" />
+      <img :src="mirror" class="h-8 lt-md:hidden" />
     </NuxtLink>
 
     <div class="flex-1"></div>

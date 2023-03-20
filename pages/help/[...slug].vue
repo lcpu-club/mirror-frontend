@@ -15,7 +15,7 @@
   </div>
   <HelpContent v-if="tabIndex === 0" :article="article" />
   <HelpDownload v-else-if="tabIndex === 1" :article="article" />
-  <div class="mt-2 pt-2 b-t flex">
+  <div class="mt-2 b-t flex">
     <a
       :href="`https://github.com/lcpu-club/mirror-frontend/edit/main/content/${article._file}`"
       target="_blank"
