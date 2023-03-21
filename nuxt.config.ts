@@ -36,7 +36,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       hash,
-      version
+      version,
+      fileBase: process.env.MIRROR_FILE_BASE ?? ''
     }
   },
   routeRules: {

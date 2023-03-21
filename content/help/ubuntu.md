@@ -12,8 +12,8 @@ variables:
       - { name: 'Ubuntu 14.04 LTS', value: 'trusty' }
     default: 'focal'
 downloads:
-  - name: 'Ubuntu 22.04 (amd64)'
-    link: '/ubuntu-releases/jammy/ubuntu-22.04.2-live-server-amd64.iso'
+  - name: '{{name}} ({{release}})'
+    link: 'ubuntu-releases/:^(?<release>[a-z]+)$/:^(?<name>.+)\.iso$'
 ---
 
 ## 镜像配置
