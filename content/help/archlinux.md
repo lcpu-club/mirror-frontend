@@ -1,6 +1,9 @@
 ---
 mirrorId: archlinux
 title: Arch Linux
+downloads:
+  - link: archlinux/iso/latest/:^archlinux-(?<date>.*?)-(?<arch>.*?)\.iso$
+    name: 'ArchLinux {{date}} {{arch}}'
 ---
 
 ## 镜像配置
