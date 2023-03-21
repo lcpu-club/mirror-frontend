@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pt-2">
     <template v-if="Object.keys(variables).length">
       <div
         class="grid grid-cols-[auto_1fr] items-center justify-items-start justify-start p-4 gap-x-4 gap-y-2"
