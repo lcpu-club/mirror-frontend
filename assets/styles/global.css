@@ -6,6 +6,14 @@ body {
   @apply min-h-full grid place-items-stretch;
 }
 
+:root {
+  @apply text-black bg-white;
+}
+
+:root.dark {
+  @apply text-dark-front bg-dark-back;
+}
+
 .btn {
   @apply transition;
 }
