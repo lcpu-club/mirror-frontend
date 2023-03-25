@@ -20,11 +20,8 @@ export interface IFileEntry {
   type: 'file' | 'directory'
 }
 
-export const useFileList = (path: string) =>
-  useFetch<IFileEntry[]>('/api/filelist', {
-    query: {
-      path
-    }
-  })
+export function getFileList(path: string): Promise<IFileEntry[]> {
+  return $fetch<IFileEntry[]>(`/api/filelist?path=${encodeURIComponent(path)}`, {})
+}
 
 export const useStatus = (type: string) => useFetch<StatusResultWithTime>(`/api/status/${type}`)

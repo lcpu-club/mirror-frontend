@@ -1,14 +1,10 @@
 /* eslint-disable no-console */
 
-import { IFileEntry } from './api'
+import { getFileList } from './api'
 
 export interface IDownloadLink {
   name: string
   link: string
-}
-
-function getFileList(path: string): Promise<IFileEntry[]> {
-  return fetch(`/api/filelist?path=${encodeURIComponent(path)}`).then((r) => r.json())
 }
 
 interface IDownloadLinkReducer {
