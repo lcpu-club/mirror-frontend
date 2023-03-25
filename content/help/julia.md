@@ -3,7 +3,6 @@ mirrorId: julia
 title: Julia
 ---
 
-## Julia 镜像使用帮助
 
 PKU Mirror 目前提供了 Julia 的官方包注册表 [General](https://github.com/JuliaRegistries/General) 镜像来加速 Julia 包的安装。
 
