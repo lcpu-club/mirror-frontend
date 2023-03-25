@@ -11,7 +11,7 @@
     <ul
       v-show="showPop"
       ref="selectPop"
-      class="pos-absolute z-10 bg-white mx-1 border border-solid border-rounded border-color-[#d4d4d4]"
+      class="pos-absolute z-9 bg-white mx-1 border border-solid border-rounded border-color-[#d4d4d4]"
     >
       <li
         v-for="option in options"
