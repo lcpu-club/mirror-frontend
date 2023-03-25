@@ -61,7 +61,9 @@
 </template>
 
 <script setup lang="ts">
+import { setResponseStatus } from 'h3'
 import { prettySize } from '@/lib/pretty'
+import { isHTTPError } from '@/lib/errors'
 
 const route = useRoute()
 
@@ -74,7 +76,17 @@ const path = computed(() => slugs.value.join('/'))
 const config = useRuntimeConfig()
 const { fileBase } = config.public
 
-const respRef = useFileList(path.value)
+const nuxt = useNuxtApp()
+const respRef = useAsyncData(async () => {
+  try {
+    return await getFileList(path.value)
+  } catch (err) {
+    if (nuxt.ssrContext && isHTTPError(err)) {
+      setResponseStatus(nuxt.ssrContext.event, err.statusCode)
+    }
+    throw err
+  }
+})
 const search = ref('')
 
 function getClass(type: string, name: string) {
