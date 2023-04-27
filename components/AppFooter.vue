@@ -67,7 +67,4 @@ const links = [
     }
   }
 ]
-
-const config = useRuntimeConfig()
-const hash = config.public.hash
 </script>
