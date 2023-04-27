@@ -33,6 +33,8 @@
 import pku from '@/assets/images/pku-withtext.svg'
 
 const showVersion = import.meta.env.DEV
+const config = useRuntimeConfig()
+const hash = config.public.hash
 
 const links = [
   {
