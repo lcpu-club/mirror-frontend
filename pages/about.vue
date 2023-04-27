@@ -13,7 +13,15 @@
         <br />
         镜像站新版本前端由<a href="https://lcpu.club">北京大学 Linux 俱乐部</a>
         提供， Linux 俱乐部是是由学生自发成立的，以学习研究 Linux
-        操作系统和其它各种与开源相关的软硬件技术为目的民间组织。欢迎大家加入 Linux 俱乐部。
+        操作系统和其它各种与开源相关的软硬件技术为目的社团。欢迎大家加入 Linux 俱乐部。
+        <br />
+        镜像站第一版贡献者：
+        <a href="https://github.com/jeremyguo">郭俊毅</a>、
+        <a href="https://github.com/fuzhenxin">付振新</a>、
+        <a href="https://github.com/keke04">周可行</a>、
+        <a href="https://github.com/pisonjay">彭伟桀</a>、
+        <a href="https://github.com/yixuan-wang">王奕轩</a>、
+        <a href="https://github.com/ouyen">ouyen</a>。
       </article>
     </div>
   </div>

@@ -16,16 +16,6 @@
         <img :src="pku" class="h-16" draggable="false" />
       </div>
     </div>
-    <div class="bg-#230403 px-8 flex justify-between font-mono">
-      <div>{{ config.public.version }}</div>
-      <a
-        :href="'https://github.com/lcpu-club/mirror-frontend/commit/' + hash"
-        class="flex items-center"
-      >
-        <div class="i-mdi-github"></div>
-        {{ hash }}
-      </a>
-    </div>
   </footer>
 </template>
 
@@ -65,7 +55,4 @@ const links = [
     }
   }
 ]
-
-const config = useRuntimeConfig()
-const hash = config.public.hash
 </script>
