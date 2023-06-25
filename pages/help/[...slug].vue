@@ -53,4 +53,8 @@ const tabs = computed(() =>
     }
   ].filter((tab) => !tab.hide)
 )
+
+onMounted(() => {
+  if (route.hash === '#download' && article.downloads) tabIndex.value = 1
+})
 </script>

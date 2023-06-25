@@ -12,7 +12,7 @@
     Or choose one from the list below:
     <ul>
       <li v-for="item of articles" :key="item._id">
-        <NuxtLink :to="item._path" class="px-4 py-2 btn flex items-center gap-2">
+        <NuxtLink :to="item._path + '#download'" class="px-4 py-2 btn flex items-center gap-2">
           {{ item.navTitle || item.title }}
         </NuxtLink>
       </li>
