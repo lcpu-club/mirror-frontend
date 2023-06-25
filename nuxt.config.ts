@@ -45,8 +45,14 @@ export default defineNuxtConfig({
     public: {
       hash,
       version,
-      fileBase: process.env.MIRROR_FILE_BASE ?? ''
-    }
+      fileBase: ''
+    },
+    // NOTICE: these values are used for server side APIs.
+    // In the future, after we refactored the actual mirror backend,
+    // We shall remove these functionalities.
+    upstreamFileBase: '',
+    upstreamMirrorBase: '',
+    upstreamStatusBase: ''
   },
   routeRules: {
     '/help/**': { prerender: true }

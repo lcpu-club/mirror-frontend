@@ -13,12 +13,13 @@ function isMaliciousPath(path: string): boolean {
 }
 
 export default defineEventHandler(async (ev) => {
+  const base = useRuntimeConfig().upstreamFileBase
   const { path } = getQuery(ev)
   try {
     if (typeof path !== 'string' || isMaliciousPath(path)) {
       throw new HTTPError(400)
     }
-    const resp = await fetch(`https://mirrors.pku.edu.cn/files/${path}`)
+    const resp = await fetch(`${base}/${path}`)
     const code = resp.status
     if (code === 404) {
       throw new HTTPError(404)
