@@ -44,12 +44,14 @@
                   class="flex"
                 >
                   <div class="i-mdi-help-circle text-blue">Help</div>
-                  <div
-                    v-if="helps[mirror.id].hasDownloads"
-                    class="i-mdi-download-circle text-green"
-                  >
-                    Download
-                  </div>
+                </NuxtLink>
+                <NuxtLink
+                  v-if="helps[mirror.id]?.hasDownloads"
+                  :to="helps[mirror.id]._path + '#download'"
+                  :title="mirror.id + '_download'"
+                  class="flex"
+                >
+                  <div class="i-mdi-download-circle text-green">Download</div>
                 </NuxtLink>
                 <span class="text-xs text-gray truncate lt-lg:hidden">{{ mirror.desc }}</span>
               </td>
