@@ -5,7 +5,7 @@
       <AsyncData :data="downloadLinks">
         <li v-for="(download, i) of downloadLinks.data.value" :key="i">
           <a
-            :href="config.public.fileBase + download.link"
+            :href="download.link"
             target="_blank"
             class="btn p-2 flex items-center gap-2"
           >
@@ -26,5 +26,4 @@ const props = defineProps<{
 }>()
 
 const downloadLinks = useDownloadLinks(props.article.downloads)
-const config = useRuntimeConfig()
 </script>

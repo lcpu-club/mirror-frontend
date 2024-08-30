@@ -5,6 +5,7 @@ import { version } from './package.json'
 const hash = execSync('git rev-parse --short HEAD').toString().trim()
 
 export default defineNuxtConfig({
+  ssr: false,
   typescript: {
     shim: false
   },
@@ -47,12 +48,6 @@ export default defineNuxtConfig({
       version,
       fileBase: ''
     },
-    // NOTICE: these values are used for server side APIs.
-    // In the future, after we refactored the actual mirror backend,
-    // We shall remove these functionalities.
-    upstreamFileBase: '',
-    upstreamMirrorBase: '',
-    upstreamStatusBase: ''
   },
   routeRules: {
     '/help/**': { prerender: true }

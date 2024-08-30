@@ -10,9 +10,8 @@ export interface IMirrorEntry {
 }
 
 export default defineEventHandler(async () => {
-  const base = useRuntimeConfig().upstreamMirrorBase
-  const mirrors = await fetch(`${base}/mirrors`).then((res) => res.json())
-  const status = await fetch(`${base}/status`).then((res) => res.json())
+  const mirrors = await fetch(`/monitor/mirrors`).then((res) => res.json())
+  const status = await fetch(`/monitor/status`).then((res) => res.json())
   const data = status.map(
     ({ diskUsage, id, lastSyncTime, nextSyncTime, state }: Record<string, any>) => ({
       id,

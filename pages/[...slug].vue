@@ -40,7 +40,7 @@
                 <NuxtLink v-if="item.type === 'directory'" :to="`/${path}/${item.name}`">
                   {{ item.name }}
                 </NuxtLink>
-                <a v-else :href="`${fileBase}/${path}/${item.name}`">{{ item.name }}</a>
+                <a v-else :href="`/${path}/${item.name}`">{{ item.name }}</a>
               </td>
               <td>{{ prettySize(item.size) ?? '/' }}</td>
               <td>{{ item.mtime }}</td>
@@ -72,9 +72,6 @@ const slugLinks = computed(() =>
   slugs.value.map((slug, i) => [slug, '/' + slugs.value.slice(0, i + 1).join('/')])
 )
 const path = computed(() => slugs.value.join('/'))
-
-const config = useRuntimeConfig()
-const { fileBase } = config.public
 
 const nuxt = useNuxtApp()
 const respRef = useAsyncData(async () => {
