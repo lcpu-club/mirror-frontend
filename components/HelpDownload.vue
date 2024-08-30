@@ -4,11 +4,7 @@
     <ul class="px-4">
       <AsyncData :data="downloadLinks">
         <li v-for="(download, i) of downloadLinks.data.value" :key="i">
-          <a
-            :href="download.link"
-            target="_blank"
-            class="btn p-2 flex items-center gap-2"
-          >
+          <a :href="download.link" target="_blank" class="btn p-2 flex items-center gap-2">
             <div class="i-mdi-download"></div>
             {{ download.name }}
           </a>

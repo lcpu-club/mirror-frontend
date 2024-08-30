@@ -47,7 +47,7 @@ export default defineNuxtConfig({
       hash,
       version,
       fileBase: ''
-    },
+    }
   },
   routeRules: {
     '/help/**': { prerender: true }
