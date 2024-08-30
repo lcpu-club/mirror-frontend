@@ -1,0 +1,51 @@
+name: Build nuxt server
+
+on:
+  push:
+    branches: ['main']
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(corepack yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: Cache yarn dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: corepack yarn
+      - name: Build nuxt
+        run: corepack yarn build
+      - name: Create Tarball
+        uses: a7ul/tar-action@v1.1.0
+        with:
+          command: c
+          cwd: .output
+          files: |
+            ./public
+          outPath: ${{ github.workspace }}/mirror-frontend.tar.gz
+      - name: Upload Tarball
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://jfrog.lcpu.dev/artifactory/mirror/mirror-frontend.tar.gz'
+          method: 'PUT'
+          bearerToken: ${{ secrets.JFROG_BEARER_TOKEN }}
+          file: ${{ github.workspace }}/mirror-frontend.tar.gz
