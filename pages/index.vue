@@ -84,7 +84,7 @@ useHead({
   title: 'Mirror List'
 })
 
-const respRef = useMirrorList()
+const respRef = useAsyncData('mirrorList', () => useMirrorList())
 const search = ref('')
 
 const helpList = useAsyncData(() =>

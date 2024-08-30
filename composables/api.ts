@@ -29,28 +29,31 @@ interface MirrorStatus {
   nextSyncTime: number
   diskUsage: string
 }
+export const useMirrorList = async (): Promise<IMirrorEntry[]> => {
+  try {
+    // Fetch repositories and status concurrently
+    const [repositories, status] = await Promise.all([
+      $fetch<Repositories>('/monitor/mirrors', {}),
+      $fetch<MirrorStatus[]>('/monitor/status', {})
+    ])
 
-export function useMirrorList(): Promise<IMirrorEntry[]> {
-  // fetch /monitor/status and /monitor/mirrors, then combine them by id
-  const repositories = $fetch<Repositories>('/monitor/mirrors', {})
-  const status = $fetch<MirrorStatus[]>('/monitor/status', {})
-
-  // merge repositories and status
-  return Promise.all([repositories, status]).then(([repositories, status]) => {
+    // Merge repositories and status by ID
     return status.map((item) => {
       const repo = repositories[item.id]
       return {
         id: item.id,
-        name: repo.name,
-        desc: repo.describe,
-        url: repo.url,
+        name: repo?.name ?? 'Unknown', // handle missing repo
+        desc: repo?.describe ?? 'No description available',
+        url: repo?.url ?? '',
         diskUsage: item.diskUsage,
         lastSyncTime: item.lastSyncTime,
         nextSyncTime: item.nextSyncTime,
         state: item.state
       }
     })
-  })
+  } catch (error) {
+    throw new Error('Failed to fetch mirror list')
+  }
 }
 
 export interface IFileEntry {
