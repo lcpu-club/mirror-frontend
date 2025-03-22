@@ -5,7 +5,7 @@ const isIOS = () =>
 let _iOSWorkaround = false
 
 const _unrefEl = (maybeRef: Ref<Element | null> | Element | null) =>
-  maybeRef instanceof Element ? maybeRef : maybeRef?.value ?? null
+  maybeRef instanceof Element ? maybeRef : (maybeRef?.value ?? null)
 
 export interface OnClickOutsideOptions {
   /**

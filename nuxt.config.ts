@@ -46,7 +46,8 @@ export default defineNuxtConfig({
     public: {
       hash,
       version,
-      fileBase: ''
+      fileBase: '',
+      mirrorStatusURL: ''
     }
   },
   routeRules: {

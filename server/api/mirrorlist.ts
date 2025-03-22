@@ -6,24 +6,40 @@ export interface IMirrorEntry {
   diskUsage: string
   lastSyncTime: number
   nextSyncTime: number
-  state: 'done' | 'error' | 'sync'
+  state: 'done' | 'error' | 'sync' | 'paused'
 }
 
-export default defineEventHandler(async () => {
-  const mirrors = await fetch(`/monitor/mirrors`).then((res) => res.json())
-  const status = await fetch(`/monitor/status`).then((res) => res.json())
-  const data = status.map(
-    ({ diskUsage, id, lastSyncTime, nextSyncTime, state }: Record<string, any>) => ({
-      id,
-      name: mirrors[id].name,
-      desc: mirrors[id].describe,
-      url: mirrors[id].url,
+export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event)
+  const baseFileUrl = config.public.fileBase
+  const statusURL = config.public.mirrorStatusURL
+
+  const mirrorsData = await fetch(statusURL).then((res) => res.json())
+
+  const data = mirrorsData.map((mirror: any) => {
+    let state: 'done' | 'error' | 'sync' | 'paused' = 'error'
+    if (mirror.status === 'success') {
+      state = 'done'
+    } else if (mirror.status === 'syncing') {
+      state = 'sync'
+    } else if (mirror.status === 'paused') {
+      state = 'paused'
+    }
+
+    const diskUsage = mirror.size === 'unknown' ? 'N/A' : mirror.size
+
+    return {
+      id: mirror.name,
+      name: mirror.name,
+      desc: '', // TODO: Get mirror description
+      url: `${baseFileUrl}/${mirror.name}/`,
       diskUsage,
-      lastSyncTime,
-      nextSyncTime,
+      lastSyncTime: mirror.last_ended_ts * 1000,
+      nextSyncTime: mirror.next_schedule_ts * 1000,
       state
-    })
-  ) as IMirrorEntry[]
+    }
+  }) as IMirrorEntry[]
+
   data.sort((a, b) => a.name.localeCompare(b.name))
   return data
 })

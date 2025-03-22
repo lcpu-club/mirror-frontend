@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import AppSelect from '@/components/AppSelect.vue'
-import { IVariableConfig } from '@/lib/variables'
+import type { IVariableConfig } from '@/lib/variables'
 
 const props = defineProps<{
   modelValue: string

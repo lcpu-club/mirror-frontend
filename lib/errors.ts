@@ -1,5 +1,8 @@
 export class HTTPError extends Error {
-  constructor(public statusCode: number, message = `HTTP Error ${statusCode}`) {
+  constructor(
+    public statusCode: number,
+    message = `HTTP Error ${statusCode}`
+  ) {
     super(message)
   }
 }

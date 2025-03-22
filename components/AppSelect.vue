@@ -20,7 +20,7 @@
           'px-2 py-1 cursor-pointer hover-color-white hover-bg-pku-red',
           option.value === modelValue ? 'color-white bg-pku-red' : ''
         ]"
-        @click="emit('update:modelValue', option.value), (showPop = !showPop)"
+        @click="(emit('update:modelValue', option.value), (showPop = !showPop))"
       >
         {{ option.name }}
       </li>

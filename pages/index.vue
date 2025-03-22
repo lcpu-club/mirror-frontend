@@ -31,7 +31,9 @@
           </thead>
           <tbody>
             <tr
-              v-for="mirror of respRef.data.value!.filter(mirror => mirror.name.toLowerCase().includes(search.toLowerCase()))"
+              v-for="mirror of respRef.data.value!.filter((mirror) =>
+                mirror.name.toLowerCase().includes(search.toLowerCase())
+              )"
               :key="mirror.id"
               :class="[`mirrorstatus-${mirror.state}`]"
             >
@@ -127,5 +129,9 @@ const helps = computed(() =>
 
 .mirrorstatus-sync {
   @apply bg-blue-100 dark:bg-blue-900;
+}
+
+.mirrorstatus-paused {
+  @apply bg-yellow-100 dark:bg-yellow-900;
 }
 </style>
