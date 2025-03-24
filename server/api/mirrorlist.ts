@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
     return {
       id: mirror.name,
       name: mirror.name,
-      desc: '', // TODO: Get mirror description
+      desc: mirror.description,
       url: `${baseFileUrl}/${mirror.name}/`,
       diskUsage,
       lastSyncTime: mirror.last_ended_ts * 1000,
