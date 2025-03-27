@@ -27,7 +27,7 @@ downloads:
 ### 使用命令修改
 
 ```bash
-sudo sed -ri.bak -e 's/\/\/.*?(archive.ubuntu.com|mirrors.*?)\/ubuntu/\/\/mirrors.pku.edu.cn\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -ri.bak -e 's/(http|https):\/\/(archive.ubuntu.com|mirrors.[^\/]*?)\/ubuntu/\1:\/\/mirrors.pku.edu.cn\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources
 ```
 
 注：该命令表示将 `archive.ubuntu.com` 和 `mirrors.*` 替换为 `mirrors.pku.edu.cn`，并把 `security.ubuntu.com` 删除。
