@@ -6,10 +6,13 @@ const hash = execSync('git rev-parse --short HEAD').toString().trim()
 
 export default defineNuxtConfig({
   ssr: false,
+
   typescript: {
     shim: false
   },
+
   modules: ['@unocss/nuxt', '@nuxt/content', '@nuxtjs/color-mode'],
+
   unocss: {
     wind: true,
     icons: true,
@@ -21,13 +24,17 @@ export default defineNuxtConfig({
       }
     }
   },
+
   colorMode: {
     classSuffix: ''
   },
+
   css: ['@unocss/reset/tailwind.css', '@/assets/styles/global.css'],
+
   build: {
     transpile: [/echarts/]
   },
+
   content: {
     highlight: {
       theme: {
@@ -42,6 +49,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   runtimeConfig: {
     public: {
       hash,
@@ -50,7 +58,10 @@ export default defineNuxtConfig({
       mirrorStatusURL: ''
     }
   },
+
   routeRules: {
     '/help/**': { prerender: true }
-  }
+  },
+
+  compatibilityDate: '2025-03-27'
 })

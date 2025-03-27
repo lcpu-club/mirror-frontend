@@ -11,7 +11,6 @@ export interface IMirrorEntry {
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
-  const baseFileUrl = config.public.fileBase
   const statusURL = config.public.mirrorStatusURL
 
   const mirrorsData = await fetch(statusURL).then((res) => res.json())
@@ -32,7 +31,7 @@ export default defineEventHandler(async (event) => {
       id: mirror.name,
       name: mirror.name,
       desc: mirror.description,
-      url: `${baseFileUrl}/${mirror.name}/`,
+      url: `/${mirror.name}/`,
       diskUsage,
       lastSyncTime: mirror.last_ended_ts * 1000,
       nextSyncTime: mirror.next_schedule_ts * 1000,

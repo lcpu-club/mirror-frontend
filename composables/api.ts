@@ -28,7 +28,9 @@ export interface IFileEntry {
 }
 
 export function getFileList(path: string): Promise<IFileEntry[]> {
-  return $fetch<IFileEntry[]>(`/files/${encodeURIComponent(path)}`, {})
+  const config = useRuntimeConfig()
+  const baseFileUrl = config.public.fileBase
+  return $fetch<IFileEntry[]>(`${baseFileUrl}/${encodeURIComponent(path)}`, {})
 }
 
 export const useStatus = (type: string) =>
