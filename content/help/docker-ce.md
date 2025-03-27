@@ -8,7 +8,7 @@ variables:
     options:
       - { name: 'Ubuntu', value: 'ubuntu' }
       - { name: 'Debian', value: 'debian' }
-    default: 'focal'
+    default: 'ubuntu'
 ---
 
 # 自动识别操作系统并安装
