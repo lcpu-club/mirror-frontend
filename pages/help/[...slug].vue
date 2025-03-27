@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between items-center p-4">
-    <div class="text-2xl">{{ article.title }}</div>
+    <div class="text-2xl">{{ article?.title }}</div>
   </div>
   <div class="flex justify-center lg:justify-start border-b">
     <template v-if="tabs.length > 1">
@@ -36,8 +36,15 @@ import HelpContent from '@/components/HelpContent.vue'
 import HelpDownload from '@/components/HelpDownload.vue'
 
 const route = useRoute()
+const slug = route.params.slug
 
-const article = await queryContent('help', ...route.params.slug).findOne()
+const { data: article } = await useAsyncData(
+  `help-${Array.isArray(slug) ? slug.join('/') : slug}`,
+  () => {
+    const path = `/help/${Array.isArray(slug) ? slug.join('/') : slug}`
+    return queryCollection('help').path(path).first()
+  }
+)
 
 const tabIndex = ref(0)
 const tabs = computed(() =>
@@ -49,12 +56,12 @@ const tabs = computed(() =>
     {
       label: 'Download',
       component: HelpDownload,
-      hide: !article.downloads
+      hide: !article.value.downloads
     }
   ].filter((tab) => !tab.hide)
 )
 
 onMounted(() => {
-  if (route.hash === '#download' && article.downloads) tabIndex.value = 1
+  if (route.hash === '#download' && article.value?.downloads) tabIndex.value = 1
 })
 </script>

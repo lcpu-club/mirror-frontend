@@ -23,8 +23,10 @@
 <script setup lang="ts">
 import '@/assets/styles/markdown.css'
 
-const articles = await queryContent('help')
-  .where({ hasDownloads: true })
-  .only(['_id', '_path', 'navTitle', 'title', 'hasDownloads'])
-  .find()
+const { data: articles } = await useAsyncData('help-articles', () => {
+  return queryCollection('help')
+    .select('id', 'path', 'title', 'downloads')
+    .order('title', 'ASC')
+    .all()
+})
 </script>

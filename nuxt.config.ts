@@ -5,8 +5,6 @@ import { version } from './package.json'
 const hash = execSync('git rev-parse --short HEAD').toString().trim()
 
 export default defineNuxtConfig({
-  ssr: false,
-
   typescript: {
     shim: false
   },
