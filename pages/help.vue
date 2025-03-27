@@ -6,12 +6,12 @@
       </div>
       <NuxtLink
         v-for="item of articles"
-        :key="item._id"
-        :to="item._path"
+        :key="item.mirrorId"
+        :to="item.path"
         class="px-4 py-2 btn flex items-center gap-2"
       >
-        {{ item.navTitle || item.title }}
-        <div v-if="item.hasDownloads" class="i-mdi-download-circle text-blue"></div>
+        {{ item.title }}
+        <div v-if="item.downloads" class="i-mdi-download-circle text-blue"></div>
       </NuxtLink>
     </div>
     <div class="shadow flex-1 max-w-256 min-w-64 w-0 flex flex-col">
@@ -25,7 +25,7 @@ useHead({
   title: 'Help'
 })
 
-const articles = await queryContent('help')
-  .only(['_id', '_path', 'navTitle', 'title', 'hasDownloads'])
-  .find()
+const articles = await queryCollection('help')
+  .select('path', 'mirrorId', 'title', 'downloads')
+  .all()
 </script>

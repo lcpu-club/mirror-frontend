@@ -13,7 +13,7 @@ function isMaliciousPath(path: string): boolean {
 }
 
 export default defineEventHandler(async (ev) => {
-  const base = '/files'
+  const base = '/api/files'
   const { path } = getQuery(ev)
   try {
     if (typeof path !== 'string' || isMaliciousPath(path)) {

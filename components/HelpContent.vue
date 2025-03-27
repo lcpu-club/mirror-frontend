@@ -1,6 +1,6 @@
 <template>
   <div class="pt-2">
-    <template v-if="Object.keys(variables).length">
+    <template v-if="article && Object.keys(variables).length">
       <div
         class="grid grid-cols-[auto_1fr] items-center justify-items-start justify-start p-4 gap-x-4 gap-y-2"
       >
@@ -13,23 +13,30 @@
         />
       </div>
     </template>
-    <ContentRenderer :value="computedArticle" tag="article" class="markdown-body p-4 pt-0" />
+    <ContentRenderer
+      v-if="article"
+      :value="computedArticle"
+      tag="article"
+      class="markdown-body p-4 pt-0"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-import type { IVariableConfig } from '@/lib/variables'
 
 const props = defineProps<{
-  article: ParsedContent
+  article: ParsedContent | null
 }>()
 
-const variables: Record<string, IVariableConfig> = props.article.variables ?? {}
+const variables = computed(() => props.article?.variables ?? {})
 const actualVariables = reactive<Record<string, string>>(
-  Object.fromEntries(Object.entries(variables).map(([k, v]) => [k, v.default]))
+  Object.fromEntries(Object.entries(variables.value).map(([k, v]) => [k, v.default]))
 )
+
 const computedArticle = computed(() => {
+  if (!props.article) return null
+
   function deepInterpolate<T>(obj: T): T {
     if (typeof obj === 'string') {
       return obj.replace(/\{\{(.+?)\}\}/g, (_, key) => {
