@@ -6,5 +6,5 @@ title: Bioconductor
 请在 `~/.Rprofile` 后面添加一行：
 
 ```
-options(BioC_mirror="https://mirrors.pku.edu.cn/bioconductor")
+options(BioC_mirror="https://mirrors.lcpu.dev/bioconductor")
 ```

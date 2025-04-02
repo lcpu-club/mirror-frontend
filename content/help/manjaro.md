@@ -9,7 +9,7 @@ title: Manjaro
 
 ```unix-conf
 ## China
-Server = https://mirrors.pku.edu.cn/manjaro/$repo/os/$arch
+Server = https://mirrors.lcpu.dev/manjaro/$repo/os/$arch
 ```
 
 以添加并启用北大镜像源。

@@ -12,7 +12,7 @@ CentOS 中，创建 Kubernetes 镜像配置文件 `/etc/yum.repos.d/kubernetes.r
 ```bash
 [kubernetes]
 name=kubernetes
-baseurl=https://mirrors.pku.edu.cn/kubernetes/yum/repos/kubernetes-el7-$basearch
+baseurl=https://mirrors.lcpu.dev/kubernetes/yum/repos/kubernetes-el7-$basearch
 enabled=1
 ```
 

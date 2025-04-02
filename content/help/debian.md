@@ -21,7 +21,7 @@ Debian 11 版本及之前， 镜像配置文件位于`/etc/apt/sources.list`。
 ## 使用命令行修改
 
 ```bash
-sudo sed -i 's/deb.debian.org/mirrors.pku.edu.cn/g' /etc/apt/mirrors/debian.list \
+sudo sed -i 's/deb.debian.org/mirrors.lcpu.dev/g' /etc/apt/mirrors/debian.list \
     /etc/apt/mirrors/debian-security.list \
     /etc/apt/sources.list
 ```
@@ -32,16 +32,16 @@ Debian 11 及以前版本，手动替换原有的 `/etc/apt/sources.list` 文件
 
 ```unix-conf
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
-deb http://mirrors.pku.edu.cn/debian/ {{debian_codename}} main contrib non-free
-# deb-src https://mirrors.pku.edu.cn/debian/ {{debian_codename}} main contrib non-free
-deb http://mirrors.pku.edu.cn/debian/ {{debian_codename}}-updates main contrib non-free
-# deb-src http://mirrors.pku.edu.cn/debian/ {{debian_codename}}-updates main contrib non-free
+deb http://mirrors.lcpu.dev/debian/ {{debian_codename}} main contrib non-free
+# deb-src https://mirrors.lcpu.dev/debian/ {{debian_codename}} main contrib non-free
+deb http://mirrors.lcpu.dev/debian/ {{debian_codename}}-updates main contrib non-free
+# deb-src http://mirrors.lcpu.dev/debian/ {{debian_codename}}-updates main contrib non-free
 
-deb http://mirrors.pku.edu.cn/debian/ {{debian_codename}}-backports main contrib non-free
-# deb-src http://mirrors.pku.edu.cn/debian/ {{debian_codename}}-backports main contrib non-free
+deb http://mirrors.lcpu.dev/debian/ {{debian_codename}}-backports main contrib non-free
+# deb-src http://mirrors.lcpu.dev/debian/ {{debian_codename}}-backports main contrib non-free
 
-deb http://mirrors.pku.edu.cn/debian-security {{debian_codename}}-security main contrib non-free
-# deb-src http://mirrors.pku.edu.cn/debian-security {{debian_codename}}-security main contrib non-free
+deb http://mirrors.lcpu.dev/debian-security {{debian_codename}}-security main contrib non-free
+# deb-src http://mirrors.lcpu.dev/debian-security {{debian_codename}}-security main contrib non-free
 
 # 如果条件允许，建议使用官方 security 源
 #deb https://security.debian.org/debian-security {{debian_codename}}-security main contrib non-free

@@ -12,7 +12,7 @@ downloads:
 
 ```unix-conf
 ## China
-Server = https://mirrors.pku.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.lcpu.dev/archlinux/$repo/os/$arch
 ```
 
 以添加并启用北大镜像源。

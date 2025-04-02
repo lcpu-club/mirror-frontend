@@ -9,7 +9,7 @@ title: Arch Linux CN
 
 ```unix-conf
 [archlinuxcn]
-Server = https://mirrors.pku.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.lcpu.dev/archlinuxcn/$arch
 ```
 
 以添加并启用北大 Arch Linux CN 镜像源。

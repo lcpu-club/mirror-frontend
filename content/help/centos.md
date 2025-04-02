@@ -5,7 +5,7 @@ title: CentOS
 
 ## 说明
 
-CentOS8 的非 Stream 版已经移动至 Centos-Vault, 请访问`https://mirrors.pku.edu.cn/Help/CentOS-Vault`获取使用方式。
+CentOS8 的非 Stream 版已经移动至 Centos-Vault, 请访问`https://mirrors.lcpu.dev/Help/CentOS-Vault`获取使用方式。
 
 本文包括 `CentOS7` 和 `CentOS8 Stream`的说明。
 
@@ -17,12 +17,12 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
 
    ```bash
    sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-             -e 's|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.pku.edu.cn|g' \
+             -e 's|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.lcpu.dev|g' \
              -i.bak \
              /etc/yum.repos.d/CentOS-Base.repo
    ```
 
-   即将该文件中`baseurl=`行取消注释并改为北大源地址http://mirrors.pku.edu.cn/centos/开头。
+   即将该文件中`baseurl=`行取消注释并改为北大源地址http://mirrors.lcpu.dev/centos/开头。
 
    修改文件后需要更新缓存：
 
@@ -35,7 +35,7 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
    可通过如下命令直接下载配置文件并替换原有的`/etc/yum.repos.d/CentOS-Base.repo`：
 
    ```bash
-   sudo curl http://mirrors.pku.edu.cn/repoconfig/centos7/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo
+   sudo curl http://mirrors.lcpu.dev/repoconfig/centos7/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo
    ```
 
    ```unix-conf
@@ -54,7 +54,7 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
    [base]
    name=CentOS-$releasever - Base
    #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
-   baseurl=http://mirrors.pku.edu.cn/centos/$releasever/os/$basearch/
+   baseurl=http://mirrors.lcpu.dev/centos/$releasever/os/$basearch/
    gpgcheck=1
    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
@@ -62,7 +62,7 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
    [updates]
    name=CentOS-$releasever - Updates
    #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
-   baseurl=http://mirrors.pku.edu.cn/centos/$releasever/updates/$basearch/
+   baseurl=http://mirrors.lcpu.dev/centos/$releasever/updates/$basearch/
    gpgcheck=1
    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
@@ -70,7 +70,7 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
    [extras]
    name=CentOS-$releasever - Extras
    #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
-   baseurl=http://mirrors.pku.edu.cn/centos/$releasever/extras/$basearch/
+   baseurl=http://mirrors.lcpu.dev/centos/$releasever/extras/$basearch/
    gpgcheck=1
    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
@@ -78,7 +78,7 @@ CentOS 7 镜像配置文件位于`/etc/yum.repos.d/CentOS-Base.repo`。
    [centosplus]
    name=CentOS-$releasever - Plus
    #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
-   baseurl=http://mirrors.pku.edu.cn/centos/$releasever/centosplus/$basearch/
+   baseurl=http://mirrors.lcpu.dev/centos/$releasever/centosplus/$basearch/
    gpgcheck=1
    enabled=0
    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
@@ -98,7 +98,7 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
 
    ```bash
    sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.pku.edu.cn/centos|g' \
+            -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.lcpu.dev/centos|g' \
             -i.bak \
             /etc/yum.repos.d/CentOS-Linux-AppStream.repo \
             /etc/yum.repos.d/CentOS-Linux-BaseOS.repo \
@@ -118,11 +118,11 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
    可通过如下命令直接下载配置文件并替换原有的`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseOS|Extras|PowerTools|Plus].repo`：
 
    ```bash
-       sudo wget http://mirrors.pku.edu.cn/repoconfig/centos8/CentOS-Linux-AppStream.repo -O /etc/yum.repos.d/CentOS-Linux-AppStream.repo
-       sudo wget http://mirrors.pku.edu.cn/repoconfig/centos8/CentOS-Linux-BaseOS.repo -O /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
-       sudo wget http://mirrors.pku.edu.cn/repoconfig/centos8/CentOS-Linux-Extras.repo -O /etc/yum.repos.d/CentOS-Linux-Extras.repo
-       sudo wget http://mirrors.pku.edu.cn/repoconfig/centos8/CentOS-Linux-PowerTools.repo -O /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
-       sudo wget http://mirrors.pku.edu.cn/repoconfig/centos8/CentOS-Linux-Plus.repo -O /etc/yum.repos.d/CentOS-Linux-Plus.repo
+       sudo wget http://mirrors.lcpu.dev/repoconfig/centos8/CentOS-Linux-AppStream.repo -O /etc/yum.repos.d/CentOS-Linux-AppStream.repo
+       sudo wget http://mirrors.lcpu.dev/repoconfig/centos8/CentOS-Linux-BaseOS.repo -O /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
+       sudo wget http://mirrors.lcpu.dev/repoconfig/centos8/CentOS-Linux-Extras.repo -O /etc/yum.repos.d/CentOS-Linux-Extras.repo
+       sudo wget http://mirrors.lcpu.dev/repoconfig/centos8/CentOS-Linux-PowerTools.repo -O /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+       sudo wget http://mirrors.lcpu.dev/repoconfig/centos8/CentOS-Linux-Plus.repo -O /etc/yum.repos.d/CentOS-Linux-Plus.repo
    ```
 
    修改文件后需要更新缓存：
@@ -147,7 +147,7 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
      [appstream]
      name=CentOS Linux $releasever - AppStream
      #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=AppStream&infra=$infra
-     baseurl=http://mirrors.pku.edu.cn/centos/$releasever/AppStream/$basearch/os/
+     baseurl=http://mirrors.lcpu.dev/centos/$releasever/AppStream/$basearch/os/
      gpgcheck=1
      enabled=1
      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
@@ -169,7 +169,7 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
      [baseos]
      name=CentOS Linux $releasever - BaseOS
      #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=BaseOS&infra=$infra
-     baseurl=http://mirrors.pku.edu.cn/centos/$releasever/BaseOS/$basearch/os/
+     baseurl=http://mirrors.lcpu.dev/centos/$releasever/BaseOS/$basearch/os/
      gpgcheck=1
      enabled=1
      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
@@ -191,7 +191,7 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
      [extras]
      name=CentOS Linux $releasever - Extras
      #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
-     baseurl=http://mirrors.pku.edu.cn/centos/$releasever/extras/$basearch/os/
+     baseurl=http://mirrors.lcpu.dev/centos/$releasever/extras/$basearch/os/
      gpgcheck=1
      enabled=1
      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
@@ -213,7 +213,7 @@ CentOS 8 镜像配置文件位于`/etc/yum.repos.d/CentOS-Linux-[AppStream|BaseO
      [powertools]
      name=CentOS Linux $releasever - PowerTools
      #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra
-     baseurl=http://mirrors.pku.edu.cn/centos/$releasever/PowerTools/$basearch/os/
+     baseurl=http://mirrors.lcpu.dev/centos/$releasever/PowerTools/$basearch/os/
      gpgcheck=1
      enabled=0
      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial

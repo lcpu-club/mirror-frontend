@@ -34,25 +34,25 @@ Raspbian 并非由树莓派的开发与维护机构 The Raspberry Pi Foundation 
 
 ```unix-conf
 # armv7l 用户：编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代
-deb http://mirrors.pku.edu.cn/raspbian/raspbian/ <codename> main non-free contrib rpi
-# deb-src http://mirrors.pku.edu.cn/raspbian/raspbian/ <codename> main non-free contrib rpi
+deb http://mirrors.lcpu.dev/raspbian/raspbian/ <codename> main non-free contrib rpi
+# deb-src http://mirrors.lcpu.dev/raspbian/raspbian/ <codename> main non-free contrib rpi
 
 # armv7l 用户如果需要开启 multi-arch 使用 arm64 软件源，需要在 `/etc/apt/sources.list` 中加上
-deb [arch=arm64] http://mirrors.pku.edu.cn/raspbian/multiarch/ <codename> main
+deb [arch=arm64] http://mirrors.lcpu.dev/raspbian/multiarch/ <codename> main
 
 # aarch64 用户：编辑 `/etc/apt/sources.list` 文件，用以下内容取代：
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
-deb https://mirrors.pku.edu.cn/debian/ <codename> main contrib non-free
-# deb-src https://mirrors.pku.edu.cn/debian/ <codename> main contrib non-free
-deb https://mirrors.pku.edu.cn/debian/ <codename>-updates main contrib non-free
-# deb-src https://mirrors.pku.edu.cn/debian/ <codename>-updates main contrib non-free
-deb https://mirrors.pku.edu.cn/debian/ <codename>-backports main contrib non-free
-# deb-src https://mirrors.pku.edu.cn/debian/ <codename>-backports main contrib non-free
-deb https://mirrors.pku.edu.cn/debian-security <codename>-security main contrib non-free
-# deb-src https://mirrors.pku.edu.cn/debian-security <codename>-security main contrib non-free
+deb https://mirrors.lcpu.dev/debian/ <codename> main contrib non-free
+# deb-src https://mirrors.lcpu.dev/debian/ <codename> main contrib non-free
+deb https://mirrors.lcpu.dev/debian/ <codename>-updates main contrib non-free
+# deb-src https://mirrors.lcpu.dev/debian/ <codename>-updates main contrib non-free
+deb https://mirrors.lcpu.dev/debian/ <codename>-backports main contrib non-free
+# deb-src https://mirrors.lcpu.dev/debian/ <codename>-backports main contrib non-free
+deb https://mirrors.lcpu.dev/debian-security <codename>-security main contrib non-free
+# deb-src https://mirrors.lcpu.dev/debian-security <codename>-security main contrib non-free
 
 # 对于两个架构，编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：
-deb https://mirrors.pku.edu.cn/raspberrypi/ <codename> main
+deb https://mirrors.lcpu.dev/raspberrypi/ <codename> main
 ```
 
 注意：网址末尾的 `raspbian` 重复两次是必须的。因为 Raspbian 的仓库中除了 APT 软件源还包含其他代码。APT 软件源不在仓库的根目录，而在 `raspbian/` 子目录下。

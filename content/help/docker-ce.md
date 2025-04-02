@@ -21,7 +21,7 @@ Docker 提供了一个自动配置与安装的脚本，支持 **Debian、RHEL、
 - 您系统上有 `curl` 或 `wget`
 
 ```bash
-export DOWNLOAD_URL="https://mirrors.pku.edu.cn/docker-ce"
+export DOWNLOAD_URL="https://mirrors.lcpu.dev/docker-ce"
 ```
 
 ## 如您使用 curl
@@ -41,7 +41,7 @@ wget -O- https://get.docker.com/ | sh
 CenOS 中，使用下述命令下载 Docker-ce 安装包镜像配置文件到指定位置。
 
 ```bash
-sudo wget http://mirrors.pku.edu.cn/repoconfig/docker-ce/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+sudo wget http://mirrors.lcpu.dev/repoconfig/docker-ce/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
 ```
 
 修改文件后需要更新缓存：
@@ -71,14 +71,14 @@ sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-pr
 信任 Docker 的 GPG 公钥:
 
 ```bash
-curl -fsSL https://mirrors.pku.edu.cn/docker-ce/linux/{{distro}}/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://mirrors.lcpu.dev/docker-ce/linux/{{distro}}/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
 添加软件仓库:
 
 ```bash
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.pku.edu.cn/docker-ce/linux/{{distro}} \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.lcpu.dev/docker-ce/linux/{{distro}} \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 

@@ -22,7 +22,7 @@ Platform Info:
   LIBM: libopenlibm
   LLVM: libLLVM-8.0.1 (ORCJIT, broadwell)
 Environment:
-  JULIA_PKG_SERVER = https://mirrors.pku.edu.cn/julia
+  JULIA_PKG_SERVER = https://mirrors.lcpu.dev/julia
 ```
 
 若不设置该环境变量则默认使用官方服务器 `pkg.julialang.org` 作为上游。
@@ -31,8 +31,8 @@ Environment:
 
 不同系统和命令行下设置环境变量的方式各不相同，在命令行下可以通过以下方式来临时修改环境变量
 
-- Linux Bash: `export JULIA_PKG_SERVER=https://mirrors.pku.edu.cn/julia`
-- Windows Powershell: `$env:JULIA_PKG_SERVER = 'https://mirrors.pku.edu.cn/julia'`
+- Linux Bash: `export JULIA_PKG_SERVER=https://mirrors.lcpu.dev/julia`
+- Windows Powershell: `$env:JULIA_PKG_SERVER = 'https://mirrors.lcpu.dev/julia'`
 
 也可以利用 JuliaCN 社区维护的中文本地化工具包 [JuliaZH](https://github.com/JuliaCN/JuliaZH.jl) 来进行切换：
 
@@ -48,7 +48,7 @@ JuliaZH.mirrors # 查询记录的上游信息
 
 ```
 # ~/.bashrc
-export JULIA_PKG_SERVER=https://mirrors.pku.edu.cn/julia
+export JULIA_PKG_SERVER=https://mirrors.lcpu.dev/julia
 ```
 
 此外，这里再提供一种针对 Julia 的全平台通用的方式：`$JULIA_DEPOT_PATH/config/startup.jl`
@@ -56,7 +56,7 @@ export JULIA_PKG_SERVER=https://mirrors.pku.edu.cn/julia
 
 ```julia
 # ~/.julia/config/startup.jl
-ENV["JULIA_PKG_SERVER"] = "https://mirrors.pku.edu.cn/julia"
+ENV["JULIA_PKG_SERVER"] = "https://mirrors.lcpu.dev/julia"
 ```
 
 也可以选择使用 `JuliaZH` 来一键修改/创建 `startup.jl` 文件：

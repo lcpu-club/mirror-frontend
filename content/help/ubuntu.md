@@ -27,10 +27,10 @@ downloads:
 ### 使用命令修改
 
 ```bash
-sudo sed -ri.bak -e 's/(http|https):\/\/(archive.ubuntu.com|mirrors.[^\/]*?)\/ubuntu/\1:\/\/mirrors.pku.edu.cn\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -ri.bak -e 's/(http|https):\/\/(archive.ubuntu.com|mirrors.[^\/]*?)\/ubuntu/\1:\/\/mirrors.lcpu.dev\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources
 ```
 
-注：该命令表示将 `archive.ubuntu.com` 和 `mirrors.*` 替换为 `mirrors.pku.edu.cn`，并把 `security.ubuntu.com` 删除。
+注：该命令表示将 `archive.ubuntu.com` 和 `mirrors.*` 替换为 `mirrors.lcpu.dev`，并把 `security.ubuntu.com` 删除。
 
 修改文件后需要更新索引：
 
@@ -43,17 +43,17 @@ sudo apt-get update
 Ubuntu 22.04 及以前，手动替换文件内容为：
 
 ```unix-conf
-deb http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}} main restricted universe multiverse
-# deb-src http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}} main restricted universe multiverse
+deb http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}} main restricted universe multiverse
+# deb-src http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}} main restricted universe multiverse
 
-deb http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-updates main restricted universe multiverse
-# deb-src http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-updates main restricted universe multiverse
+deb http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-updates main restricted universe multiverse
+# deb-src http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-updates main restricted universe multiverse
 
-deb http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-backports main restricted universe multiverse
-# deb-src http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-backports main restricted universe multiverse
+deb http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-backports main restricted universe multiverse
+# deb-src http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-backports main restricted universe multiverse
 
-deb http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-security main restricted universe multiverse
-# deb-src http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-security main restricted universe multiverse
+deb http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-security main restricted universe multiverse
+# deb-src http://mirrors.lcpu.dev/ubuntu {{ubuntu_codename}}-security main restricted universe multiverse
 
 # 如果条件允许，建议使用官方 security 源
 # deb http://security.ubuntu.com/ubuntu {{ubuntu_codename}}-security main restricted universe multiverse
@@ -70,14 +70,14 @@ deb http://mirrors.pku.edu.cn/ubuntu {{ubuntu_codename}}-security main restricte
 
 ```unix-conf
 Types: deb
-URIs: https://mirrors.pku.edu.cn/ubuntu
+URIs: https://mirrors.lcpu.dev/ubuntu
 Suites: {{ubuntu_codename}} {{ubuntu_codename}}-updates {{ubuntu_codename}}-backports {{ubuntu_codename}}-security
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 # Types: deb-src
-# URIs: https://mirrors.pku.edu.cn/ubuntu
+# URIs: https://mirrors.lcpu.dev/ubuntu
 # Suites: {{ubuntu_codename}} {{ubuntu_codename}}-updates {{ubuntu_codename}}-backports
 # Components: main restricted universe multiverse
 # Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
