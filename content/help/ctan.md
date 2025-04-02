@@ -3,7 +3,7 @@ mirrorId: ctan
 title: CTAN
 downloads:
   - name: '{{name}}'
-    link: 'ctan/systems/texlive/Images/:^(?<name>.+\.iso)$'
+    link: 'CTAN/systems/texlive/Images/:^(?<name>.+\.iso)$'
 ---
 
 CTAN (The Comprehensive TeX Archive Network) 镜像源可以使用 TeX Live 管理器 `tlmgr` 更改。
