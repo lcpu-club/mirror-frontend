@@ -32,8 +32,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: corepack yarn
-      # - name: Generate nuxt static files
-      #   run: corepack yarn generate
+      - name: Generate nuxt static files
+        run: corepack yarn generate
       - name: Create Tarball
         uses: a7ul/tar-action@v1.1.0
         with:
