@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-mongo
 {
   "name": "Mirror-Frontend",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-22",
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
   // Configure tool-specific properties.
